@@ -220,7 +220,7 @@
 
 	<div data-role="header">
     <a href="#mypanel" data-transition="slide" class="ui-btn">Menu</a>
-    <a href="#login" data-transition="slide">></a>
+    <a href="#login" data-transition="slide" >></a>
 		<h1>Contact Us</h1>
 
 	</div><!-- /header -->
@@ -254,6 +254,7 @@
   	<div data-role="header">
 
       <a href="#mypanel" data-transition="slide" class="ui-btn">Menu</a>
+        <a href="#contact" data-transition="slide" data-direction="reverse" class="ui-btn"><</a>
 
 
 	</div><!-- /header -->
@@ -265,10 +266,11 @@
     <form >
       <input type="text" name="user" id="user" value="" placeholder="User name or E-mail">
       <input type="text" name="password" id="pw" value="" placeholder="Password">
-      <button name="login-btn" id="login-btn" type="button">login</button>
+      <button name="login-btn" id="login-btn" type="submit" value="submit">login</button>
 
-      <button name="signUp-btn" id="signUp-btn" type="button">Create Account</button>
-    </form>
+    <form2 >
+      <button name="signUp-btn" id="signUp-btn" type="submit" value"submit">Create Account</button>
+    </form2>
 
 
 	</div><!-- /content -->
