@@ -1,102 +1,112 @@
 
+        $(function () {
+            var settings = {
+                reservedSeat: 2,
+                unavilableSeat: 3,
+                rowCssPrefix: 'row-',
+                colCssPrefix: 'col-',
+                seatWidth: 250,
+                seatHeight: 250,
+                seatCss: 'seat',
+                selectedSeatCss: 'selectedSeat',
+                selectingSeatCss: 'selectingSeat',
+                unavaliableSeatCss: 'unavilableSeat'
+            };
 
-      <script>
-      var context;
-      function init()
-      {
-      context= myCanvas.getContext('2d');
-      context.beginPath();
-      context.fillStyle="#0000ff";
-      // Draws a circle of radius 20 at the coordinates 100,100 on the canvas
-      context.arc(100,100,20,0,Math.PI*2,true); context.closePath();
-      context.fill();
-      }
-      </script>
+            var init = function (Seat) {
+                var str = [], seatNo, className;
+                var rows= Seat.length;
+                var cols= Seat[0].length;
+                for (i = 0; i <rows; i++) {
+                    for (j = 0; j <cols; j++) {
+                        seatNo = (i + j *rows + 1);
+
+                        className = settings.seatCss + ' ' + settings.rowCssPrefix + i.toString() + ' ' + settings.colCssPrefix + j.toString();
+
+                        if (Seat[i][j]==settings.reservedSeat) {
+                            className += ' ' + settings.selectedSeatCss;
+                            //console.log(inArray(seatNo, reservedSeat));
+                        }
+                        else if(Seat[i][j]== settings.unavilableSeat){
+                           className += ' ' + settings.unavaliableSeatCss;
+                           //console.log(settings.unavaliableSeatCss);
+                        }
+                        str.push('<li title="'+seatNo+'" class="' + className + '"' +
+                                  'style="top:' + (i * settings.seatHeight).toString() + 'px;left:' + (j * settings.seatWidth).toString() + 'px" href="'+i,'-',j+'">' +
+                                  '<a title="' + seatNo + '">' + seatNo + '</a>' +
+                                  '</li>');
+
+                    }
+                }
+                $('#place').html(str.join(''));
+            };
+
+            //case I: Show from starting
+            //init();
+
+            //Case II: If already booked
+            var Seats =[ [0, 0, 0, 0],
+                         [2, 2, 2, 2],
+                         [3, 3, 3, 3],
+                      ];
+
+            init(Seats);
+
+            var clickNum=0;
+            $('.' + settings.seatCss).on('click',function () {
+
+            if ($(this).hasClass(settings.selectedSeatCss)){
+                alert('This seat is already reserved');
+            }
+            else if($(this).hasClass(settings.unavaliableSeatCss))
+            {
+                alert('Sorry!!!This is unavailable Court');
+            }
+
+              else
+              {
+               if($(this).hasClass(settings.selectingSeatCss))
+                {
+                    $(this).removeClass(settings.selectingSeatCss);
+                     var SeatNo=$(this).closest("li").attr("title");
+                     console.log($('li.selectingSeat').each(function()
+                      {$(this).attr("href")
+                    }));
+                    $(".sitting:last").remove();
 
 
-      <script>
-      var context;
-      var x=100;
-      var y=200;
-      var dx=5;
-      var dy=5;
+                }
+                else
+                {
+                  $(this).addClass(settings.selectingSeatCss);
+                 var link=$(this).attr('href');
+                link=link+"";
 
-      function init()
-      {
-        context= myCanvas.getContext('2d');
-        setInterval(draw,10);
-      }
-
-      function draw()
-      {
-        context.beginPath();
-        context.fillStyle="#0000ff";
-        // Draws a circle of radius 20 at the coordinates 100,100 on the canvas
-        context.arc(x,y,20,0,Math.PI*2,true);
-        context.closePath();
-        context.fill();
-        x+=dx;
-        y+=dy;
-      }
-
-      <script>
-      var context;
-      var x=100;
-      var y=100;
-      var dx=5;
-      var dy=5;
-
-      function init()
-      {
-        context= myCanvas.getContext('2d');
-        setInterval(draw,10);
-      }
-
-      function draw()
-      {
-        context.clearRect(0,0, 300,300);
-        context.beginPath();
-        context.fillStyle="#0000ff";
-        // Draws a circle of radius 20 at the coordinates 100,100 on the canvas
-        context.arc(x,y,20,0,Math.PI*2,true);
-        context.closePath();
-        context.fill();
-        x+=dx;
-        y+=dy;
-      }
-
-
-      </script>
+                var SeatNo=$(this).closest("li").attr("title");
+               // console.log(traverse.closest("a"));
+                //var SeatNo=$(this).closest("a").attr("title");
+                 $('<div class="sitting" title="'+SeatNo+'">SeatNo:>'+SeatNo+ '</div>').appendTo('#order_place');
 
 
 
-      <script>
-      var context;
-      var x=100;
-      var y=200;
-      var dx=5;
-      var dy=5;
 
-      function init()
-      {
-        context= myCanvas.getContext('2d');
-        setInterval(draw,10);
-      }
+                 }
+                }
 
-      function draw()
-      {
-        context.clearRect(0,0, 300,300);
-        context.beginPath();
-        context.fillStyle="#0000ff";
-        // Draws a circle of radius 20 at the coordinates 100,100 on the canvas
-        context.arc(x,y,20,0,Math.PI*2,true);
-        context.closePath();
-        context.fill();
-        // Boundary Logic
-      if( x<0 || x>300) dx=-dx;
-      if( y<0 || y>300) dy=-dy;
-      x+=dx;
-      y+=dy;
-      }
 
-      </script>
+            });
+          $("#click").click(function(){
+            var realvalues = [];
+            $('li.selectingSeat').each(function(i){realvalues[i]=$(this).attr("href");});
+            realvalues=realvalues.join('>');
+             //location.href ="http://localhost:8080/mymovie/SeatBook.action?cseatsWanted="+realvalues;
+
+
+             window.history.pushState({push:this.push},'','?booking='+realvalues);
+          });
+
+
+
+
+
+        });
