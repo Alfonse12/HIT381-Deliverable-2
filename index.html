@@ -116,6 +116,200 @@
 
     </style>
 
+
+    <script>
+               $(document).ready(function(){
+                var teams = [
+                  "Banks"
+                     ];
+                $(".styleteam" ).autocomplete({
+                  source: teams
+                });
+
+            	$(".date").datetimepicker();
+            	var gradesss =[
+            	 "A Men",
+            	 "A Women"
+            	  ];
+
+            	 $(".stylegrade").autocomplete({
+            	  source:gradesss
+            	 });
+            	var umpire = [
+
+            	   "R. Yeoh Yong"];
+
+            	  $(".styleumpire").autocomplete({
+            	     source: umpire
+            	  });
+            	 });
+             </script>
+
+            <script>
+            	 $(document).ready(function(){
+            	  $("#addgames").click(function () {
+            		$("#date,#teamA,#teamB,#grade,#Location,#ump1,#ump2").css({"background-color": "white"});
+
+            		if ( $("#date").val() =='' &&  $("#teamA").val()=='' && $("#teamB").val()=='' && $("#grade").val()=='' && $("#Location").val()=='' && $("#ump1").val()=='' && $("#ump2").val()==''  )
+            		  {
+            		    alert("Please input all fields!");
+            			$("#date,#teamA,#teamB,#grade,#Location,#ump1,#ump2").css({"background-color": "yellow"});
+
+            		  }
+            		 else if ($("#teamA").val()=='' && $("#teamB").val()=='' )
+            		 {
+                        alert("please fill all the fields!");
+            			$("#teamA").focus();
+            			$("#teamA").css({"background-color": "white"});
+            			$("#teamA").css({"background-color": "white"});
+            	}
+
+
+            		else if ($("#teamA").val() == $("#teamB").val() || $("#teamB").val() == $("#teamA").val() )
+            	      {
+                        alert("Make sure you don't have the same team!");
+            			$("#teamA").focus();
+            			$("#teamA").css({"background-color": "red"});
+            			$("#teamB").css({"background-color": "red"});
+                      }
+
+            		else if ($("#ump1").val()=='' && $("#ump2").val()=='')
+            		{
+            		    alert("Umpire 1 cannot be the same with umpire 2");
+            			$("#ump1").focus();
+            			$("#ump1").css({"background-color": "red"});
+            			$("#ump2").css({"background-color": "red"});
+
+            		}
+            		 else if ($("#ump1").val() == $("#ump2").val() || $("#ump2").val() == $("#ump1").val() )
+            		 {
+            		    alert("Umpire 1 cannot be the same with umpire 2");
+            			$("#ump1").focus();
+            			$("#ump1").css({"background-color": "red"});
+            			$("#ump2").css({"background-color": "red"});
+            		 }
+
+            		else if ($("#date").val() ==''){
+            		  alert("Please select date for match");
+            		  $("#date").focus();
+            		 /* $("#date").addClass("error");
+            		  $("#dateError").html("You Must Enter a Date!");*/
+            		}
+            		/*else{
+            			$("#date").removeClass("error");
+            			$("#dateError").html("");
+            		}
+
+            		*/
+            		else if($("#teamA").val() =='')
+            		{
+            		  alert("Please select team in Team A ");
+            		  $("#teamA").focus();
+            		}
+
+            		else if($("#teamB").val() =='')
+            		{
+            		  alert("Please select team in team B");
+            		  $("#teamB").focus();
+            		}
+
+            		else if($("#grade").val() =='')
+            		{
+            		  alert("Please select grade under Grade");
+            		  $("#grade").focus();
+            		}
+
+            		else if($("#Location").val() =='')
+            		{
+            		  alert("Please select a location");
+            		  $("#Location").focus();
+            		}
+
+            		else if($("#ump1").val() =='')
+            		{
+            		  alert("Please select an Umpire in umpure 1");
+            		  $("#ump1").focus();
+            		}
+
+            		else if($("#ump2").val() =='')
+            		{
+            		  alert("Please select an Umpire in umpire 2");
+            		  $("#ump2").focus();
+            		}
+            		else
+            		{
+            		 alert("Thank you, The game was added")
+            		 $("#gamesform")[0].reset();
+            		}
+
+            	  });
+            	  $("#game2,#game3,#game4,#game5,#game6,#game7,#game8,#game9,#game10,#game11,#game12,#game13,#game14,#game15,#game16,#game17,#game18,#addfields2").hide();
+
+                 $("#addfields").click(function() {
+            	    $("#game2").slideDown("slow");
+            	    $("#addfields").click(function(){
+            		   $("#game3").slideDown("slow");
+            		   $("#addfields").click(function(){
+            		     $("#game4").slideDown("slow");
+            		     $("#addfields").click(function(){
+            			    $("#game5").slideDown("slow");
+            			    $("#addfields").click(function(){
+            			        $("#game6").slideDown("slow");
+            			        $("#addfields").click(function(){
+            				        $("#game7").slideDown("slow");
+            				        $("#addfields").click(function(){
+            						   $("#game8").slideDown("slow");
+            				           $("#addfields").click(function(){
+            						      $("#game9").slideDown("slow");
+            							     $("#addfields").click(function(){
+            								    $("#game10").slideDown("slow");
+            									$("#addfields").hide();
+            									$("#addfields2").show();
+
+            								    });
+            							   });
+            						   });
+            				       });
+            			        });
+            			    });
+            		    });
+            	    });
+            	});
+
+                $("#addfields2").click(function(){
+            		$("#game11").slideDown("slow");
+            		$("#addfields2").click(function(){
+            			$("#game12").slideDown("slow");
+            			$("#addfields2").click(function(){
+            				$("#game13").slideDown("slow");
+            				$("#addfields2").click(function(){
+            					$("#game14").slideDown("slow");
+            					$("#addfields2").click(function(){
+            						$("#game15").slideDown("slow");
+            						$("#addfields2").click(function(){
+            							$("#game16").slideDown("slow");
+            							$("#addfields2").click(function(){
+            								$("#game17").slideDown("slow");
+            								$("#addfields2").click(function(){
+            									$("#game18").slideDown("slow");
+            									$("#addfields2").click(function(){
+            									 alert("Only 18 rows are accepteble!");
+
+            									});
+            								});
+            							});
+            						});
+            					});
+            				});
+            			});
+            		});
+            	});
+
+              });
+
+</script>
+
+
 </head>
 
 
@@ -130,7 +324,7 @@
   <div data-role="panel" data-position="left" id="mypanel" >
     <a href="#player" data-transition="slide" class="ui-btn" >Players</a>
     <a href="#coach" data-transition="slide" class="ui-btn">Coach</a>
-    <a href="#about" data-transition="slide" class="ui-btn">About</a>
+    <a href="#court" data-transition="slide" class="ui-btn">Court</a>
     <a href="#contact" data-transition="slide" class="ui-btn">Contact Us</a>
     <a href="#login" data-transition="slide" class="ui-btn">Login</a>
   </div><!-- /panel -->
@@ -165,7 +359,7 @@
   <div data-role="panel" data-position="left" id="mypanel" >
     <a href="#home" data-transition="slide" data-direction="reverse" class="ui-btn">Home</a>
     <a href="#coach" data-transition="slide" class="ui-btn">Coach</a>
-    <a href="#about" data-transition="slide" class="ui-btn">About</a>
+    <a href="#court" data-transition="slide" class="ui-btn">Court</a>
     <a href="#contact" data-transition="slide" class="ui-btn">Contact Us</a>
     <a href="#login" data-transition="slide" class="ui-btn">Login</a>
   </div>
@@ -175,10 +369,72 @@
     <a href="#mypanel" data-transition="slide" class="ui-btn">Menu</a>
     <a href="#coach" data-transition="slide" class="ui-btn">></a>
 
+    <h1>Players</h1>
 
     		<div class="card">
 
-    				<h1>Card 1</h1>
+    				<h1>Sabin </h1>
+					<img src="img/player12.jpg" alt="image_from_" />
+				<h1>
+					<label for="male">Availability</label>
+					<label for="flip-4" class="ui-hidden-accessible">Flip toggle:</label>
+						<select name="flip-4" id="flip-4" data-role="slider" data-mini="true">
+    						<option value="off">Off</option>
+    						<option value="on">On</option>
+						</select>
+					<label for="slider-2">Experience</label>
+					<input type="range" name="slider-2" id="slider-2" value="50" min="0" max="100" data-highlight="true">
+
+						<label for="male">Sex</label>
+
+					<label for="select-native-4" class="ui-hidden-accessible">Native select:</label>
+					<select name="select-native-4" id="select-native-4">
+    					<option value="small">Male</option>
+    					<option value="medium">Female</option>
+					</select>
+
+          <label for="male">Age</label>
+
+          <label for="select-native-4" class="ui-hidden-accessible">Native select:</label>
+					<select name="select-native-4" id="select-native-4">
+    					<option value="small">10</option>
+    					<option value="medium">11</option>
+              <option value="small">12</option>
+    					<option value="medium">13</option>
+              <option value="small">14</option>
+    					<option value="medium">15</option>
+              <option value="small">16</option>
+    					<option value="medium">17</option>
+              <option value="small">18</option>
+    					<option value="medium">19</option>
+              <option value="small">20</option>
+    					<option value="medium">21</option>
+              <option value="small">22</option>
+    					<option value="medium">23</option>
+              <option value="small">24</option>
+    					<option value="medium">25</option>
+              <option value="small">26</option>
+    					<option value="medium">27</option>
+              <option value="small">28</option>
+    					<option value="medium">29</option>
+              <option value="small">30</option>
+    					<option value="medium">31-40</option>
+              <option value="small">41-50</option>
+    					<option value="medium">51-60</option>
+              <option value="medium">61-70</option>
+              <option value="small">71-80</option>
+    					<option value="medium">81-x</option>
+
+					</select>
+
+				</h1>
+
+					<h2> About me</h2>
+					<p> sncsncd,s;;sd;ds  </P>
+          <p> sncsncd,s;;sd;ds  </P>
+          <p> sncsncd,s;;sd;ds  </P>
+          <p> sncsncd,s;;sd;ds  </P>
+          <p> sncsncd,s;;sd;ds  </P>
 
     			<div class="cardAction">
 
@@ -188,16 +444,650 @@
 
         <div class="card">
 
-            <h1>Card 2</h1>
+    				<h1>Sabin </h1>
+					<img src="img/player12.jpg" alt="image_from_" />
+				<h1>
+					<label for="male">Availability</label>
+					<label for="flip-4" class="ui-hidden-accessible">Flip toggle:</label>
+						<select name="flip-4" id="flip-4" data-role="slider" data-mini="true">
+    						<option value="off">Off</option>
+    						<option value="on">On</option>
+						</select>
+					<label for="slider-2">Experience</label>
+					<input type="range" name="slider-2" id="slider-2" value="50" min="0" max="100" data-highlight="true">
 
-            <img src="images/das1.png" alt="image_from_" />
+						<label for="male">Sex</label>
+
+					<label for="select-native-4" class="ui-hidden-accessible">Native select:</label>
+					<select name="select-native-4" id="select-native-4">
+    					<option value="small">Male</option>
+    					<option value="medium">Female</option>
+					</select>
+
+          <label for="male">Age</label>
+
+          <label for="select-native-4" class="ui-hidden-accessible">Native select:</label>
+					<select name="select-native-4" id="select-native-4">
+    					<option value="small">10</option>
+    					<option value="medium">11</option>
+              <option value="small">12</option>
+    					<option value="medium">13</option>
+              <option value="small">14</option>
+    					<option value="medium">15</option>
+              <option value="small">16</option>
+    					<option value="medium">17</option>
+              <option value="small">18</option>
+    					<option value="medium">19</option>
+              <option value="small">20</option>
+    					<option value="medium">21</option>
+              <option value="small">22</option>
+    					<option value="medium">23</option>
+              <option value="small">24</option>
+    					<option value="medium">25</option>
+              <option value="small">26</option>
+    					<option value="medium">27</option>
+              <option value="small">28</option>
+    					<option value="medium">29</option>
+              <option value="small">30</option>
+    					<option value="medium">31-40</option>
+              <option value="small">41-50</option>
+    					<option value="medium">51-60</option>
+              <option value="medium">61-70</option>
+              <option value="small">71-80</option>
+    					<option value="medium">81-x</option>
+
+					</select>
+
+				</h1>
+
+					<h2> About me</h2>
+					<p> sncsncd,s;;sd;ds  </P>
+          <p> sncsncd,s;;sd;ds  </P>
+          <p> sncsncd,s;;sd;ds  </P>
+          <p> sncsncd,s;;sd;ds  </P>
+          <p> sncsncd,s;;sd;ds  </P>
+
+    			<div class="cardAction">
+
+    			</div>
+
+    		</div>
+
+
+        <div class="card">
+
+            <h1>Sabin </h1>
+          <img src="img/player12.jpg" alt="image_from_" />
+        <h1>
+          <label for="male">Availability</label>
+          <label for="flip-4" class="ui-hidden-accessible">Flip toggle:</label>
+            <select name="flip-4" id="flip-4" data-role="slider" data-mini="true">
+    						<option value="off">Off</option>
+    						<option value="on">On</option>
+            </select>
+          <label for="slider-2">Experience</label>
+          <input type="range" name="slider-2" id="slider-2" value="50" min="0" max="100" data-highlight="true">
+
+            <label for="male">Sex</label>
+
+          <label for="select-native-4" class="ui-hidden-accessible">Native select:</label>
+          <select name="select-native-4" id="select-native-4">
+    					<option value="small">Male</option>
+    					<option value="medium">Female</option>
+          </select>
+
+          <label for="male">Age</label>
+
+          <label for="select-native-4" class="ui-hidden-accessible">Native select:</label>
+          <select name="select-native-4" id="select-native-4">
+    					<option value="small">10</option>
+    					<option value="medium">11</option>
+              <option value="small">12</option>
+    					<option value="medium">13</option>
+              <option value="small">14</option>
+    					<option value="medium">15</option>
+              <option value="small">16</option>
+    					<option value="medium">17</option>
+              <option value="small">18</option>
+    					<option value="medium">19</option>
+              <option value="small">20</option>
+    					<option value="medium">21</option>
+              <option value="small">22</option>
+    					<option value="medium">23</option>
+              <option value="small">24</option>
+    					<option value="medium">25</option>
+              <option value="small">26</option>
+    					<option value="medium">27</option>
+              <option value="small">28</option>
+    					<option value="medium">29</option>
+              <option value="small">30</option>
+    					<option value="medium">31-40</option>
+              <option value="small">41-50</option>
+    					<option value="medium">51-60</option>
+              <option value="medium">61-70</option>
+              <option value="small">71-80</option>
+    					<option value="medium">81-x</option>
+
+          </select>
+
+        </h1>
+
+          <h2> About me</h2>
+          <p> sncsncd,s;;sd;ds  </P>
+          <p> sncsncd,s;;sd;ds  </P>
+          <p> sncsncd,s;;sd;ds  </P>
+          <p> sncsncd,s;;sd;ds  </P>
+          <p> sncsncd,s;;sd;ds  </P>
 
           <div class="cardAction">
 
-            <p></P>
+          </div>
+
+        </div>
+
+        <div class="card">
+
+            <h1>Sabin </h1>
+          <img src="img/player12.jpg" alt="image_from_" />
+        <h1>
+          <label for="male">Availability</label>
+          <label for="flip-4" class="ui-hidden-accessible">Flip toggle:</label>
+            <select name="flip-4" id="flip-4" data-role="slider" data-mini="true">
+    						<option value="off">Off</option>
+    						<option value="on">On</option>
+            </select>
+          <label for="slider-2">Experience</label>
+          <input type="range" name="slider-2" id="slider-2" value="50" min="0" max="100" data-highlight="true">
+
+            <label for="male">Sex</label>
+
+          <label for="select-native-4" class="ui-hidden-accessible">Native select:</label>
+          <select name="select-native-4" id="select-native-4">
+    					<option value="small">Male</option>
+    					<option value="medium">Female</option>
+          </select>
+
+          <label for="male">Age</label>
+
+          <label for="select-native-4" class="ui-hidden-accessible">Native select:</label>
+          <select name="select-native-4" id="select-native-4">
+    					<option value="small">10</option>
+    					<option value="medium">11</option>
+              <option value="small">12</option>
+    					<option value="medium">13</option>
+              <option value="small">14</option>
+    					<option value="medium">15</option>
+              <option value="small">16</option>
+    					<option value="medium">17</option>
+              <option value="small">18</option>
+    					<option value="medium">19</option>
+              <option value="small">20</option>
+    					<option value="medium">21</option>
+              <option value="small">22</option>
+    					<option value="medium">23</option>
+              <option value="small">24</option>
+    					<option value="medium">25</option>
+              <option value="small">26</option>
+    					<option value="medium">27</option>
+              <option value="small">28</option>
+    					<option value="medium">29</option>
+              <option value="small">30</option>
+    					<option value="medium">31-40</option>
+              <option value="small">41-50</option>
+    					<option value="medium">51-60</option>
+              <option value="medium">61-70</option>
+              <option value="small">71-80</option>
+    					<option value="medium">81-x</option>
+
+          </select>
+
+        </h1>
+
+          <h2> About me</h2>
+          <p> sncsncd,s;;sd;ds  </P>
+          <p> sncsncd,s;;sd;ds  </P>
+          <p> sncsncd,s;;sd;ds  </P>
+          <p> sncsncd,s;;sd;ds  </P>
+          <p> sncsncd,s;;sd;ds  </P>
+
+          <div class="cardAction">
 
           </div>
+
         </div>
+
+
+        <div class="card">
+
+            <h1>Sabin </h1>
+          <img src="img/player12.jpg" alt="image_from_" />
+        <h1>
+          <label for="male">Availability</label>
+          <label for="flip-4" class="ui-hidden-accessible">Flip toggle:</label>
+            <select name="flip-4" id="flip-4" data-role="slider" data-mini="true">
+    						<option value="off">Off</option>
+    						<option value="on">On</option>
+            </select>
+          <label for="slider-2">Experience</label>
+          <input type="range" name="slider-2" id="slider-2" value="50" min="0" max="100" data-highlight="true">
+
+            <label for="male">Sex</label>
+
+          <label for="select-native-4" class="ui-hidden-accessible">Native select:</label>
+          <select name="select-native-4" id="select-native-4">
+    					<option value="small">Male</option>
+    					<option value="medium">Female</option>
+          </select>
+
+          <label for="male">Age</label>
+
+          <label for="select-native-4" class="ui-hidden-accessible">Native select:</label>
+          <select name="select-native-4" id="select-native-4">
+    					<option value="small">10</option>
+    					<option value="medium">11</option>
+              <option value="small">12</option>
+    					<option value="medium">13</option>
+              <option value="small">14</option>
+    					<option value="medium">15</option>
+              <option value="small">16</option>
+    					<option value="medium">17</option>
+              <option value="small">18</option>
+    					<option value="medium">19</option>
+              <option value="small">20</option>
+    					<option value="medium">21</option>
+              <option value="small">22</option>
+    					<option value="medium">23</option>
+              <option value="small">24</option>
+    					<option value="medium">25</option>
+              <option value="small">26</option>
+    					<option value="medium">27</option>
+              <option value="small">28</option>
+    					<option value="medium">29</option>
+              <option value="small">30</option>
+    					<option value="medium">31-40</option>
+              <option value="small">41-50</option>
+    					<option value="medium">51-60</option>
+              <option value="medium">61-70</option>
+              <option value="small">71-80</option>
+    					<option value="medium">81-x</option>
+
+          </select>
+
+        </h1>
+
+          <h2> About me</h2>
+          <p> sncsncd,s;;sd;ds  </P>
+          <p> sncsncd,s;;sd;ds  </P>
+          <p> sncsncd,s;;sd;ds  </P>
+          <p> sncsncd,s;;sd;ds  </P>
+          <p> sncsncd,s;;sd;ds  </P>
+
+          <div class="cardAction">
+
+          </div>
+
+        </div>
+
+
+        <div class="card">
+
+            <h1>Sabin </h1>
+          <img src="img/player12.jpg" alt="image_from_" />
+        <h1>
+          <label for="male">Availability</label>
+          <label for="flip-4" class="ui-hidden-accessible">Flip toggle:</label>
+            <select name="flip-4" id="flip-4" data-role="slider" data-mini="true">
+    						<option value="off">Off</option>
+    						<option value="on">On</option>
+            </select>
+          <label for="slider-2">Experience</label>
+          <input type="range" name="slider-2" id="slider-2" value="50" min="0" max="100" data-highlight="true">
+
+            <label for="male">Sex</label>
+
+          <label for="select-native-4" class="ui-hidden-accessible">Native select:</label>
+          <select name="select-native-4" id="select-native-4">
+    					<option value="small">Male</option>
+    					<option value="medium">Female</option>
+          </select>
+
+          <label for="male">Age</label>
+
+          <label for="select-native-4" class="ui-hidden-accessible">Native select:</label>
+          <select name="select-native-4" id="select-native-4">
+    					<option value="small">10</option>
+    					<option value="medium">11</option>
+              <option value="small">12</option>
+    					<option value="medium">13</option>
+              <option value="small">14</option>
+    					<option value="medium">15</option>
+              <option value="small">16</option>
+    					<option value="medium">17</option>
+              <option value="small">18</option>
+    					<option value="medium">19</option>
+              <option value="small">20</option>
+    					<option value="medium">21</option>
+              <option value="small">22</option>
+    					<option value="medium">23</option>
+              <option value="small">24</option>
+    					<option value="medium">25</option>
+              <option value="small">26</option>
+    					<option value="medium">27</option>
+              <option value="small">28</option>
+    					<option value="medium">29</option>
+              <option value="small">30</option>
+    					<option value="medium">31-40</option>
+              <option value="small">41-50</option>
+    					<option value="medium">51-60</option>
+              <option value="medium">61-70</option>
+              <option value="small">71-80</option>
+    					<option value="medium">81-x</option>
+
+          </select>
+
+        </h1>
+
+          <h2> About me</h2>
+          <p> sncsncd,s;;sd;ds  </P>
+          <p> sncsncd,s;;sd;ds  </P>
+          <p> sncsncd,s;;sd;ds  </P>
+          <p> sncsncd,s;;sd;ds  </P>
+          <p> sncsncd,s;;sd;ds  </P>
+
+          <div class="cardAction">
+
+          </div>
+
+        </div>
+
+
+        <div class="card">
+
+            <h1>Sabin </h1>
+          <img src="img/player12.jpg" alt="image_from_" />
+        <h1>
+          <label for="male">Availability</label>
+          <label for="flip-4" class="ui-hidden-accessible">Flip toggle:</label>
+            <select name="flip-4" id="flip-4" data-role="slider" data-mini="true">
+    						<option value="off">Off</option>
+    						<option value="on">On</option>
+            </select>
+          <label for="slider-2">Experience</label>
+          <input type="range" name="slider-2" id="slider-2" value="50" min="0" max="100" data-highlight="true">
+
+            <label for="male">Sex</label>
+
+          <label for="select-native-4" class="ui-hidden-accessible">Native select:</label>
+          <select name="select-native-4" id="select-native-4">
+    					<option value="small">Male</option>
+    					<option value="medium">Female</option>
+          </select>
+
+          <label for="male">Age</label>
+
+          <label for="select-native-4" class="ui-hidden-accessible">Native select:</label>
+          <select name="select-native-4" id="select-native-4">
+    					<option value="small">10</option>
+    					<option value="medium">11</option>
+              <option value="small">12</option>
+    					<option value="medium">13</option>
+              <option value="small">14</option>
+    					<option value="medium">15</option>
+              <option value="small">16</option>
+    					<option value="medium">17</option>
+              <option value="small">18</option>
+    					<option value="medium">19</option>
+              <option value="small">20</option>
+    					<option value="medium">21</option>
+              <option value="small">22</option>
+    					<option value="medium">23</option>
+              <option value="small">24</option>
+    					<option value="medium">25</option>
+              <option value="small">26</option>
+    					<option value="medium">27</option>
+              <option value="small">28</option>
+    					<option value="medium">29</option>
+              <option value="small">30</option>
+    					<option value="medium">31-40</option>
+              <option value="small">41-50</option>
+    					<option value="medium">51-60</option>
+              <option value="medium">61-70</option>
+              <option value="small">71-80</option>
+    					<option value="medium">81-x</option>
+
+          </select>
+
+        </h1>
+
+          <h2> About me</h2>
+          <p> sncsncd,s;;sd;ds  </P>
+          <p> sncsncd,s;;sd;ds  </P>
+          <p> sncsncd,s;;sd;ds  </P>
+          <p> sncsncd,s;;sd;ds  </P>
+          <p> sncsncd,s;;sd;ds  </P>
+
+          <div class="cardAction">
+
+          </div>
+
+        </div>
+
+
+        <div class="card">
+
+            <h1>Sabin </h1>
+          <img src="img/player12.jpg" alt="image_from_" />
+        <h1>
+          <label for="male">Availability</label>
+          <label for="flip-4" class="ui-hidden-accessible">Flip toggle:</label>
+            <select name="flip-4" id="flip-4" data-role="slider" data-mini="true">
+    						<option value="off">Off</option>
+    						<option value="on">On</option>
+            </select>
+          <label for="slider-2">Experience</label>
+          <input type="range" name="slider-2" id="slider-2" value="50" min="0" max="100" data-highlight="true">
+
+            <label for="male">Sex</label>
+
+          <label for="select-native-4" class="ui-hidden-accessible">Native select:</label>
+          <select name="select-native-4" id="select-native-4">
+    					<option value="small">Male</option>
+    					<option value="medium">Female</option>
+          </select>
+
+          <label for="male">Age</label>
+
+          <label for="select-native-4" class="ui-hidden-accessible">Native select:</label>
+          <select name="select-native-4" id="select-native-4">
+    					<option value="small">10</option>
+    					<option value="medium">11</option>
+              <option value="small">12</option>
+    					<option value="medium">13</option>
+              <option value="small">14</option>
+    					<option value="medium">15</option>
+              <option value="small">16</option>
+    					<option value="medium">17</option>
+              <option value="small">18</option>
+    					<option value="medium">19</option>
+              <option value="small">20</option>
+    					<option value="medium">21</option>
+              <option value="small">22</option>
+    					<option value="medium">23</option>
+              <option value="small">24</option>
+    					<option value="medium">25</option>
+              <option value="small">26</option>
+    					<option value="medium">27</option>
+              <option value="small">28</option>
+    					<option value="medium">29</option>
+              <option value="small">30</option>
+    					<option value="medium">31-40</option>
+              <option value="small">41-50</option>
+    					<option value="medium">51-60</option>
+              <option value="medium">61-70</option>
+              <option value="small">71-80</option>
+    					<option value="medium">81-x</option>
+
+          </select>
+
+        </h1>
+
+          <h2> About me</h2>
+          <p> sncsncd,s;;sd;ds  </P>
+          <p> sncsncd,s;;sd;ds  </P>
+          <p> sncsncd,s;;sd;ds  </P>
+          <p> sncsncd,s;;sd;ds  </P>
+          <p> sncsncd,s;;sd;ds  </P>
+
+          <div class="cardAction">
+
+          </div>
+
+        </div>
+
+
+        <div class="card">
+
+            <h1>Sabin </h1>
+          <img src="img/player12.jpg" alt="image_from_" />
+        <h1>
+          <label for="male">Availability</label>
+          <label for="flip-4" class="ui-hidden-accessible">Flip toggle:</label>
+            <select name="flip-4" id="flip-4" data-role="slider" data-mini="true">
+    						<option value="off">Off</option>
+    						<option value="on">On</option>
+            </select>
+          <label for="slider-2">Experience</label>
+          <input type="range" name="slider-2" id="slider-2" value="50" min="0" max="100" data-highlight="true">
+
+            <label for="male">Sex</label>
+
+          <label for="select-native-4" class="ui-hidden-accessible">Native select:</label>
+          <select name="select-native-4" id="select-native-4">
+    					<option value="small">Male</option>
+    					<option value="medium">Female</option>
+          </select>
+
+          <label for="male">Age</label>
+
+          <label for="select-native-4" class="ui-hidden-accessible">Native select:</label>
+          <select name="select-native-4" id="select-native-4">
+    					<option value="small">10</option>
+    					<option value="medium">11</option>
+              <option value="small">12</option>
+    					<option value="medium">13</option>
+              <option value="small">14</option>
+    					<option value="medium">15</option>
+              <option value="small">16</option>
+    					<option value="medium">17</option>
+              <option value="small">18</option>
+    					<option value="medium">19</option>
+              <option value="small">20</option>
+    					<option value="medium">21</option>
+              <option value="small">22</option>
+    					<option value="medium">23</option>
+              <option value="small">24</option>
+    					<option value="medium">25</option>
+              <option value="small">26</option>
+    					<option value="medium">27</option>
+              <option value="small">28</option>
+    					<option value="medium">29</option>
+              <option value="small">30</option>
+    					<option value="medium">31-40</option>
+              <option value="small">41-50</option>
+    					<option value="medium">51-60</option>
+              <option value="medium">61-70</option>
+              <option value="small">71-80</option>
+    					<option value="medium">81-x</option>
+
+          </select>
+
+        </h1>
+
+          <h2> About me</h2>
+          <p> sncsncd,s;;sd;ds  </P>
+          <p> sncsncd,s;;sd;ds  </P>
+          <p> sncsncd,s;;sd;ds  </P>
+          <p> sncsncd,s;;sd;ds  </P>
+          <p> sncsncd,s;;sd;ds  </P>
+
+          <div class="cardAction">
+
+          </div>
+
+        </div>
+
+        <div class="card">
+
+            <h1>Sabin </h1>
+          <img src="img/player12.jpg" alt="image_from_" />
+        <h1>
+          <label for="male">Availability</label>
+          <label for="flip-4" class="ui-hidden-accessible">Flip toggle:</label>
+            <select name="flip-4" id="flip-4" data-role="slider" data-mini="true">
+    						<option value="off">Off</option>
+    						<option value="on">On</option>
+            </select>
+          <label for="slider-2">Experience</label>
+          <input type="range" name="slider-2" id="slider-2" value="50" min="0" max="100" data-highlight="true">
+
+            <label for="male">Sex</label>
+
+          <label for="select-native-4" class="ui-hidden-accessible">Native select:</label>
+          <select name="select-native-4" id="select-native-4">
+    					<option value="small">Male</option>
+    					<option value="medium">Female</option>
+          </select>
+
+          <label for="male">Age</label>
+
+          <label for="select-native-4" class="ui-hidden-accessible">Native select:</label>
+          <select name="select-native-4" id="select-native-4">
+    					<option value="small">10</option>
+    					<option value="medium">11</option>
+              <option value="small">12</option>
+    					<option value="medium">13</option>
+              <option value="small">14</option>
+    					<option value="medium">15</option>
+              <option value="small">16</option>
+    					<option value="medium">17</option>
+              <option value="small">18</option>
+    					<option value="medium">19</option>
+              <option value="small">20</option>
+    					<option value="medium">21</option>
+              <option value="small">22</option>
+    					<option value="medium">23</option>
+              <option value="small">24</option>
+    					<option value="medium">25</option>
+              <option value="small">26</option>
+    					<option value="medium">27</option>
+              <option value="small">28</option>
+    					<option value="medium">29</option>
+              <option value="small">30</option>
+    					<option value="medium">31-40</option>
+              <option value="small">41-50</option>
+    					<option value="medium">51-60</option>
+              <option value="medium">61-70</option>
+              <option value="small">71-80</option>
+    					<option value="medium">81-x</option>
+
+          </select>
+
+        </h1>
+
+          <h2> About me</h2>
+          <p> sncsncd,s;;sd;ds  </P>
+          <p> sncsncd,s;;sd;ds  </P>
+          <p> sncsncd,s;;sd;ds  </P>
+          <p> sncsncd,s;;sd;ds  </P>
+          <p> sncsncd,s;;sd;ds  </P>
+
+          <div class="cardAction">
+
+          </div>
+
+        </div>
+
+
 
 
 	</div><!-- /header -->
@@ -216,7 +1106,7 @@
     <a href="#home" data-transition="slide" data-direction="reverse" class="ui-btn">Home</a>
     <a href="#training" data-transition="slide" class="ui-btn">Training</a>
     <a href="#player" data-transition="slide" data-direction="reverse" class="ui-btn">Player</a>
-    <a href="#about" data-transition="slide" class="ui-btn">About</a>
+    <a href="#court" data-transition="slide" class="ui-btn">Court</a>
     <a href="#contact" data-transition="slide" class="ui-btn">Contact Us</a>
     <a href="#login" data-transition="slide" class="ui-btn">Login</a>
   </div>
@@ -231,13 +1121,616 @@
 
 	<div role="main" class="ui-content"> <!-- content -->
 
+<h2>Add Games</h2>
+
+    <div id="divgame">
+    	<form id="gamesform">
+         <fieldset id="framegames">
+          <legend id="glegend"></legend>
+    	   <div id="game1">
+    		<input type="text" id="date" class="date" placeholder="Date/time" />
+    		<input type="text" id="teamA" class="styleteam" placeholder="Team A or Player A" />
+    		<input type="text" id="teamB" class="styleteam" placeholder="Team B or Player B" />
+    		<select id="Location" class="Location"><option selected>location</option>
+          <option >Court 1</option>
+          <option >Court 2</option>
+          <option >Court 3</option>
+          <option >Court 4</option>
+          <option >Court 5</option>
+          <option >Court 6</option>
+        </select>
+    		<div id="dateError" class="errorField"></div>
+    		<div id="teamAError" class="errorField"></div>
+    		<div id="teamBError" class="errorField"></div>
+    	  </div>
+
+        <div id="game2">
+       <input type="text" id="date" class="date" placeholder="Date/time" />
+       <input type="text" id="teamA" class="styleteam" placeholder="Team A or Player A" />
+       <input type="text" id="teamB" class="styleteam" placeholder="Team B or Player B" />
+       <select id="Location" class="Location"><option selected>location</option>
+         <option >Court 1</option>
+         <option >Court 2</option>
+         <option >Court 3</option>
+         <option >Court 4</option>
+         <option >Court 5</option>
+         <option >Court 6</option>
+       </select>
+       <div id="dateError" class="errorField"></div>
+       <div id="teamAError" class="errorField"></div>
+       <div id="teamBError" class="errorField"></div>
+       </div>
+
+       <div id="game3">
+      <input type="text" id="date" class="date" placeholder="Date/time" />
+      <input type="text" id="teamA" class="styleteam" placeholder="Team A or Player A" />
+      <input type="text" id="teamB" class="styleteam" placeholder="Team B or Player B" />
+      <select id="Location" class="Location"><option selected>location</option>
+        <option >Court 1</option>
+        <option >Court 2</option>
+        <option >Court 3</option>
+        <option >Court 4</option>
+        <option >Court 5</option>
+        <option >Court 6</option>
+      </select>
+      <div id="dateError" class="errorField"></div>
+      <div id="teamAError" class="errorField"></div>
+      <div id="teamBError" class="errorField"></div>
+      </div>
+
+      <div id="game4">
+     <input type="text" id="date" class="date" placeholder="Date/time" />
+     <input type="text" id="teamA" class="styleteam" placeholder="Team A or Player A" />
+     <input type="text" id="teamB" class="styleteam" placeholder="Team B or Player B" />
+     <select id="Location" class="Location"><option selected>location</option>
+       <option >Court 1</option>
+       <option >Court 2</option>
+       <option >Court 3</option>
+       <option >Court 4</option>
+       <option >Court 5</option>
+       <option >Court 6</option>
+     </select>
+     <div id="dateError" class="errorField"></div>
+     <div id="teamAError" class="errorField"></div>
+     <div id="teamBError" class="errorField"></div>
+     </div>
+
+     <div id="game5">
+    <input type="text" id="date" class="date" placeholder="Date/time" />
+    <input type="text" id="teamA" class="styleteam" placeholder="Team A or Player A" />
+    <input type="text" id="teamB" class="styleteam" placeholder="Team B or Player B" />
+    <select id="Location" class="Location"><option selected>location</option>
+      <option >Court 1</option>
+      <option >Court 2</option>
+      <option >Court 3</option>
+      <option >Court 4</option>
+      <option >Court 5</option>
+      <option >Court 6</option>
+    </select>
+    <div id="dateError" class="errorField"></div>
+    <div id="teamAError" class="errorField"></div>
+    <div id="teamBError" class="errorField"></div>
+    </div>
+
+    <div id="game6">
+   <input type="text" id="date" class="date" placeholder="Date/time" />
+   <input type="text" id="teamA" class="styleteam" placeholder="Team A or Player A" />
+   <input type="text" id="teamB" class="styleteam" placeholder="Team B or Player B" />
+   <select id="Location" class="Location"><option selected>location</option>
+     <option >Court 1</option>
+     <option >Court 2</option>
+     <option >Court 3</option>
+     <option >Court 4</option>
+     <option >Court 5</option>
+     <option >Court 6</option>
+   </select>
+   <div id="dateError" class="errorField"></div>
+   <div id="teamAError" class="errorField"></div>
+   <div id="teamBError" class="errorField"></div>
+   </div>
+
+   <div id="game7">
+  <input type="text" id="date" class="date" placeholder="Date/time" />
+  <input type="text" id="teamA" class="styleteam" placeholder="Team A or Player A" />
+  <input type="text" id="teamB" class="styleteam" placeholder="Team B or Player B" />
+  <select id="Location" class="Location"><option selected>location</option>
+    <option >Court 1</option>
+    <option >Court 2</option>
+    <option >Court 3</option>
+    <option >Court 4</option>
+    <option >Court 5</option>
+    <option >Court 6</option>
+  </select>
+  <div id="dateError" class="errorField"></div>
+  <div id="teamAError" class="errorField"></div>
+  <div id="teamBError" class="errorField"></div>
+  </div>
+
+  <div id="game8">
+ <input type="text" id="date" class="date" placeholder="Date/time" />
+ <input type="text" id="teamA" class="styleteam" placeholder="Team A or Player A" />
+ <input type="text" id="teamB" class="styleteam" placeholder="Team B or Player B" />
+ <select id="Location" class="Location"><option selected>location</option>
+   <option >Court 1</option>
+   <option >Court 2</option>
+   <option >Court 3</option>
+   <option >Court 4</option>
+   <option >Court 5</option>
+   <option >Court 6</option>
+ </select>
+ <div id="dateError" class="errorField"></div>
+ <div id="teamAError" class="errorField"></div>
+ <div id="teamBError" class="errorField"></div>
+ </div>
+
+ <div id="game9">
+<input type="text" id="date" class="date" placeholder="Date/time" />
+<input type="text" id="teamA" class="styleteam" placeholder="Team A or Player A" />
+<input type="text" id="teamB" class="styleteam" placeholder="Team B or Player B" />
+<select id="Location" class="Location"><option selected>location</option>
+  <option >Court 1</option>
+  <option >Court 2</option>
+  <option >Court 3</option>
+  <option >Court 4</option>
+  <option >Court 5</option>
+  <option >Court 6</option>
+</select>
+<div id="dateError" class="errorField"></div>
+<div id="teamAError" class="errorField"></div>
+<div id="teamBError" class="errorField"></div>
+</div>
+
+<div id="game10">
+<input type="text" id="date" class="date" placeholder="Date/time" />
+<input type="text" id="teamA" class="styleteam" placeholder="Team A or Player A" />
+<input type="text" id="teamB" class="styleteam" placeholder="Team B or Player B" />
+<select id="Location" class="Location"><option selected>location</option>
+ <option >Court 1</option>
+ <option >Court 2</option>
+ <option >Court 3</option>
+ <option >Court 4</option>
+ <option >Court 5</option>
+ <option >Court 6</option>
+</select>
+<div id="dateError" class="errorField"></div>
+<div id="teamAError" class="errorField"></div>
+<div id="teamBError" class="errorField"></div>
+</div>
+
+<div id="game11">
+<input type="text" id="date" class="date" placeholder="Date/time" />
+<input type="text" id="teamA" class="styleteam" placeholder="Team A or Player A" />
+<input type="text" id="teamB" class="styleteam" placeholder="Team B or Player B" />
+<select id="Location" class="Location"><option selected>location</option>
+ <option >Court 1</option>
+ <option >Court 2</option>
+ <option >Court 3</option>
+ <option >Court 4</option>
+ <option >Court 5</option>
+ <option >Court 6</option>
+</select>
+<div id="dateError" class="errorField"></div>
+<div id="teamAError" class="errorField"></div>
+<div id="teamBError" class="errorField"></div>
+</div>
+
+<div id="game12">
+<input type="text" id="date" class="date" placeholder="Date/time" />
+<input type="text" id="teamA" class="styleteam" placeholder="Team A or Player A" />
+<input type="text" id="teamB" class="styleteam" placeholder="Team B or Player B" />
+<select id="Location" class="Location"><option selected>location</option>
+ <option >Court 1</option>
+ <option >Court 2</option>
+ <option >Court 3</option>
+ <option >Court 4</option>
+ <option >Court 5</option>
+ <option >Court 6</option>
+</select>
+<div id="dateError" class="errorField"></div>
+<div id="teamAError" class="errorField"></div>
+<div id="teamBError" class="errorField"></div>
+</div>
+
+<div id="game13">
+<input type="text" id="date" class="date" placeholder="Date/time" />
+<input type="text" id="teamA" class="styleteam" placeholder="Team A or Player A" />
+<input type="text" id="teamB" class="styleteam" placeholder="Team B or Player B" />
+<select id="Location" class="Location"><option selected>location</option>
+ <option >Court 1</option>
+ <option >Court 2</option>
+ <option >Court 3</option>
+ <option >Court 4</option>
+ <option >Court 5</option>
+ <option >Court 6</option>
+</select>
+<div id="dateError" class="errorField"></div>
+<div id="teamAError" class="errorField"></div>
+<div id="teamBError" class="errorField"></div>
+</div>
+
+<div id="game14">
+<input type="text" id="date" class="date" placeholder="Date/time" />
+<input type="text" id="teamA" class="styleteam" placeholder="Team A or Player A" />
+<input type="text" id="teamB" class="styleteam" placeholder="Team B or Player B" />
+<select id="Location" class="Location"><option selected>location</option>
+ <option >Court 1</option>
+ <option >Court 2</option>
+ <option >Court 3</option>
+ <option >Court 4</option>
+ <option >Court 5</option>
+ <option >Court 6</option>
+</select>
+<div id="dateError" class="errorField"></div>
+<div id="teamAError" class="errorField"></div>
+<div id="teamBError" class="errorField"></div>
+</div>
+
+<div id="game15">
+<input type="text" id="date" class="date" placeholder="Date/time" />
+<input type="text" id="teamA" class="styleteam" placeholder="Team A or Player A" />
+<input type="text" id="teamB" class="styleteam" placeholder="Team B or Player B" />
+<select id="Location" class="Location"><option selected>location</option>
+ <option >Court 1</option>
+ <option >Court 2</option>
+ <option >Court 3</option>
+ <option >Court 4</option>
+ <option >Court 5</option>
+ <option >Court 6</option>
+</select>
+<div id="dateError" class="errorField"></div>
+<div id="teamAError" class="errorField"></div>
+<div id="teamBError" class="errorField"></div>
+</div>
+
+<div id="game16">
+<input type="text" id="date" class="date" placeholder="Date/time" />
+<input type="text" id="teamA" class="styleteam" placeholder="Team A or Player A" />
+<input type="text" id="teamB" class="styleteam" placeholder="Team B or Player B" />
+<select id="Location" class="Location"><option selected>location</option>
+ <option >Court 1</option>
+ <option >Court 2</option>
+ <option >Court 3</option>
+ <option >Court 4</option>
+ <option >Court 5</option>
+ <option >Court 6</option>
+</select>
+<div id="dateError" class="errorField"></div>
+<div id="teamAError" class="errorField"></div>
+<div id="teamBError" class="errorField"></div>
+</div>
+
+<div id="game17">
+<input type="text" id="date" class="date" placeholder="Date/time" />
+<input type="text" id="teamA" class="styleteam" placeholder="Team A or Player A" />
+<input type="text" id="teamB" class="styleteam" placeholder="Team B or Player B" />
+<select id="Location" class="Location"><option selected>location</option>
+ <option >Court 1</option>
+ <option >Court 2</option>
+ <option >Court 3</option>
+ <option >Court 4</option>
+ <option >Court 5</option>
+ <option >Court 6</option>
+</select>
+<div id="dateError" class="errorField"></div>
+<div id="teamAError" class="errorField"></div>
+<div id="teamBError" class="errorField"></div>
+</div>
+
+<div id="game18">
+<input type="text" id="date" class="date" placeholder="Date/time" />
+<input type="text" id="teamA" class="styleteam" placeholder="Team A or Player A" />
+<input type="text" id="teamB" class="styleteam" placeholder="Team B or Player B" />
+<select id="Location" class="Location"><option selected>location</option>
+ <option >Court 1</option>
+ <option >Court 2</option>
+ <option >Court 3</option>
+ <option >Court 4</option>
+ <option >Court 5</option>
+ <option >Court 6</option>
+</select>
+<div id="dateError" class="errorField"></div>
+<div id="teamAError" class="errorField"></div>
+<div id="teamBError" class="errorField"></div>
+</div>
+
+    		<input type="button" id="addfields" value="ADD NEW FIELDS" />
+    		<input type="button" id="addgames" value="ADD GAMES" />
+
+    	   </fieldset>
+    	  </form>
+    	</div>
+
+	<h2>List of coaches </h2>
+
+
+      <div class="card">
+
+          <h1>Sabin </h1>
+        <img src="img/player12.jpg" alt="image_from_" />
+      <h1>
+        <label for="male">Availability</label>
+        <label for="flip-4" class="ui-hidden-accessible">Flip toggle:</label>
+          <select name="flip-4" id="flip-4" data-role="slider" data-mini="true">
+    						<option value="off">Off</option>
+    						<option value="on">On</option>
+          </select>
+        <label for="slider-2">Experience</label>
+        <input type="range" name="slider-2" id="slider-2" value="50" min="0" max="100" data-highlight="true">
+
+          <label for="male">Sex</label>
+
+        <label for="select-native-4" class="ui-hidden-accessible">Native select:</label>
+        <select name="select-native-4" id="select-native-4">
+    					<option value="small">Male</option>
+    					<option value="medium">Female</option>
+        </select>
+
+        <label for="male">Age</label>
+
+        <label for="select-native-4" class="ui-hidden-accessible">Native select:</label>
+        <select name="select-native-4" id="select-native-4">
+    					<option value="small">10</option>
+    					<option value="medium">11</option>
+            <option value="small">12</option>
+    					<option value="medium">13</option>
+            <option value="small">14</option>
+    					<option value="medium">15</option>
+            <option value="small">16</option>
+    					<option value="medium">17</option>
+            <option value="small">18</option>
+    					<option value="medium">19</option>
+            <option value="small">20</option>
+    					<option value="medium">21</option>
+            <option value="small">22</option>
+    					<option value="medium">23</option>
+            <option value="small">24</option>
+    					<option value="medium">25</option>
+            <option value="small">26</option>
+    					<option value="medium">27</option>
+            <option value="small">28</option>
+    					<option value="medium">29</option>
+            <option value="small">30</option>
+    					<option value="medium">31-40</option>
+            <option value="small">41-50</option>
+    					<option value="medium">51-60</option>
+            <option value="medium">61-70</option>
+            <option value="small">71-80</option>
+    					<option value="medium">81-x</option>
+
+        </select>
+
+      </h1>
+
+        <h2> About me</h2>
+        <p> sncsncd,s;;sd;ds  </P>
+        <p> sncsncd,s;;sd;ds  </P>
+        <p> sncsncd,s;;sd;ds  </P>
+        <p> sncsncd,s;;sd;ds  </P>
+        <p> sncsncd,s;;sd;ds  </P>
+
+        <div class="cardAction">
+
+        </div>
+
+      </div>
+
+
+      <div class="card">
+
+          <h1>Sabin </h1>
+        <img src="img/player12.jpg" alt="image_from_" />
+      <h1>
+        <label for="male">Availability</label>
+        <label for="flip-4" class="ui-hidden-accessible">Flip toggle:</label>
+          <select name="flip-4" id="flip-4" data-role="slider" data-mini="true">
+      						<option value="off">Off</option>
+      						<option value="on">On</option>
+          </select>
+        <label for="slider-2">Experience</label>
+        <input type="range" name="slider-2" id="slider-2" value="50" min="0" max="100" data-highlight="true">
+
+          <label for="male">Sex</label>
+
+        <label for="select-native-4" class="ui-hidden-accessible">Native select:</label>
+        <select name="select-native-4" id="select-native-4">
+      					<option value="small">Male</option>
+      					<option value="medium">Female</option>
+        </select>
+
+        <label for="male">Age</label>
+
+        <label for="select-native-4" class="ui-hidden-accessible">Native select:</label>
+        <select name="select-native-4" id="select-native-4">
+      					<option value="small">10</option>
+      					<option value="medium">11</option>
+            <option value="small">12</option>
+      					<option value="medium">13</option>
+            <option value="small">14</option>
+      					<option value="medium">15</option>
+            <option value="small">16</option>
+      					<option value="medium">17</option>
+            <option value="small">18</option>
+      					<option value="medium">19</option>
+            <option value="small">20</option>
+      					<option value="medium">21</option>
+            <option value="small">22</option>
+      					<option value="medium">23</option>
+            <option value="small">24</option>
+      					<option value="medium">25</option>
+            <option value="small">26</option>
+      					<option value="medium">27</option>
+            <option value="small">28</option>
+      					<option value="medium">29</option>
+            <option value="small">30</option>
+      					<option value="medium">31-40</option>
+            <option value="small">41-50</option>
+      					<option value="medium">51-60</option>
+            <option value="medium">61-70</option>
+            <option value="small">71-80</option>
+      					<option value="medium">81-x</option>
+
+        </select>
+
+      </h1>
+
+        <h2> About me</h2>
+        <p> sncsncd,s;;sd;ds  </P>
+        <p> sncsncd,s;;sd;ds  </P>
+        <p> sncsncd,s;;sd;ds  </P>
+        <p> sncsncd,s;;sd;ds  </P>
+        <p> sncsncd,s;;sd;ds  </P>
+
+        <div class="cardAction">
+
+        </div>
+
+      </div>
 
 
 
 
-    <div id="holder"> <ul  id="place"> </ul> </div>
+      <div class="card">
+
+          <h1>Sabin </h1>
+        <img src="img/player12.jpg" alt="image_from_" />
+      <h1>
+        <label for="male">Availability</label>
+        <label for="flip-4" class="ui-hidden-accessible">Flip toggle:</label>
+          <select name="flip-4" id="flip-4" data-role="slider" data-mini="true">
+    						<option value="off">Off</option>
+    						<option value="on">On</option>
+          </select>
+        <label for="slider-2">Experience</label>
+        <input type="range" name="slider-2" id="slider-2" value="50" min="0" max="100" data-highlight="true">
+
+          <label for="male">Sex</label>
+
+        <label for="select-native-4" class="ui-hidden-accessible">Native select:</label>
+        <select name="select-native-4" id="select-native-4">
+    					<option value="small">Male</option>
+    					<option value="medium">Female</option>
+        </select>
+
+        <label for="male">Age</label>
+
+        <label for="select-native-4" class="ui-hidden-accessible">Native select:</label>
+        <select name="select-native-4" id="select-native-4">
+    					<option value="small">10</option>
+    					<option value="medium">11</option>
+            <option value="small">12</option>
+    					<option value="medium">13</option>
+            <option value="small">14</option>
+    					<option value="medium">15</option>
+            <option value="small">16</option>
+    					<option value="medium">17</option>
+            <option value="small">18</option>
+    					<option value="medium">19</option>
+            <option value="small">20</option>
+    					<option value="medium">21</option>
+            <option value="small">22</option>
+    					<option value="medium">23</option>
+            <option value="small">24</option>
+    					<option value="medium">25</option>
+            <option value="small">26</option>
+    					<option value="medium">27</option>
+            <option value="small">28</option>
+    					<option value="medium">29</option>
+            <option value="small">30</option>
+    					<option value="medium">31-40</option>
+            <option value="small">41-50</option>
+    					<option value="medium">51-60</option>
+            <option value="medium">61-70</option>
+            <option value="small">71-80</option>
+    					<option value="medium">81-x</option>
+
+        </select>
+
+      </h1>
+
+        <h2> About me</h2>
+        <p> sncsncd,s;;sd;ds  </P>
+        <p> sncsncd,s;;sd;ds  </P>
+        <p> sncsncd,s;;sd;ds  </P>
+        <p> sncsncd,s;;sd;ds  </P>
+        <p> sncsncd,s;;sd;ds  </P>
+
+        <div class="cardAction">
+
+        </div>
+
+      </div>
 
 
+      <div class="card">
+
+          <h1>Sabin </h1>
+        <img src="img/player12.jpg" alt="image_from_" />
+      <h1>
+        <label for="male">Availability</label>
+        <label for="flip-4" class="ui-hidden-accessible">Flip toggle:</label>
+          <select name="flip-4" id="flip-4" data-role="slider" data-mini="true">
+    						<option value="off">Off</option>
+    						<option value="on">On</option>
+          </select>
+        <label for="slider-2">Experience</label>
+        <input type="range" name="slider-2" id="slider-2" value="50" min="0" max="100" data-highlight="true">
+
+          <label for="male">Sex</label>
+
+        <label for="select-native-4" class="ui-hidden-accessible">Native select:</label>
+        <select name="select-native-4" id="select-native-4">
+    					<option value="small">Male</option>
+    					<option value="medium">Female</option>
+        </select>
+
+        <label for="male">Age</label>
+
+        <label for="select-native-4" class="ui-hidden-accessible">Native select:</label>
+        <select name="select-native-4" id="select-native-4">
+    					<option value="small">10</option>
+    					<option value="medium">11</option>
+            <option value="small">12</option>
+    					<option value="medium">13</option>
+            <option value="small">14</option>
+    					<option value="medium">15</option>
+            <option value="small">16</option>
+    					<option value="medium">17</option>
+            <option value="small">18</option>
+    					<option value="medium">19</option>
+            <option value="small">20</option>
+    					<option value="medium">21</option>
+            <option value="small">22</option>
+    					<option value="medium">23</option>
+            <option value="small">24</option>
+    					<option value="medium">25</option>
+            <option value="small">26</option>
+    					<option value="medium">27</option>
+            <option value="small">28</option>
+    					<option value="medium">29</option>
+            <option value="small">30</option>
+    					<option value="medium">31-40</option>
+            <option value="small">41-50</option>
+    					<option value="medium">51-60</option>
+            <option value="medium">61-70</option>
+            <option value="small">71-80</option>
+    					<option value="medium">81-x</option>
+
+        </select>
+
+      </h1>
+
+        <h2> About me</h2>
+        <p> sncsncd,s;;sd;ds  </P>
+        <p> sncsncd,s;;sd;ds  </P>
+        <p> sncsncd,s;;sd;ds  </P>
+        <p> sncsncd,s;;sd;ds  </P>
+        <p> sncsncd,s;;sd;ds  </P>
+
+        <div class="cardAction">
+
+        </div>
+
+      </div>
 
 
 	</div><!-- /content -->
@@ -290,8 +1783,8 @@
 </div><!-- /page -->
 
 
-<!-- Start About page-->
-<div data-role="page" id="about">
+<!-- Start Court page-->
+<div data-role="page" id="court">
 
   <div data-role="panel" data-position="left" id="mypanel" >
     <a href="#home" data-transition="slide" data-direction="reverse" class="ui-btn">Home</a>
@@ -304,12 +1797,15 @@
 	<div data-role="header">
     <a href="#mypanel" data-transition="slide" class="ui-btn">Menu</a>
     <a href="#contact" data-transition="slide" class="ui-btn">></a>
-		<h1>About</h1>
+		<h1>Court</h1>
 
 	</div><!-- /header -->
 
 	<div role="main" class="ui-content">
-		<p>I'm fourth page 4444444444444444444444444444</p>
+
+		<p>Hire the court here</p>
+
+	<div id="holder"> <ul  id="place"> </ul> </div>
 
 	</div><!-- /content -->
 
@@ -327,7 +1823,7 @@
     <a href="#home" data-transition="slide" data-direction="reverse" class="ui-btn">Home</a>
     <a href="#player" data-transition="slide" data-direction="reverse" class="ui-btn">Player</a>
     <a href="#coach" data-transition="slide" data-direction="reverse" class="ui-btn">Coach</a>
-    <a href="#about" data-transition="slide" data-direction="reverse" class="ui-btn">About</a>
+    <a href="#court" data-transition="slide" data-direction="reverse" class="ui-btn">Court</a>
     <a href="#login" data-transition="slide" class="ui-btn">Login</a>
   </div>
 
@@ -425,7 +1921,7 @@
     <a href="#home" data-transition="slide" data-direction="reverse" class="ui-btn">Home</a>
     <a href="#player" data-transition="slide" data-direction="reverse" class="ui-btn">Player</a>
     <a href="#coach" data-transition="slide" data-direction="reverse" class="ui-btn">Coach</a>
-    <a href="#about" data-transition="slide" data-direction="reverse" class="ui-btn">About</a>
+    <a href="#court" data-transition="slide" data-direction="reverse" class="ui-btn">court</a>
     <a href="#contact" data-transition="slide" data-direction="reverse" class="ui-btn">Contact Us</a>
   </div>
 
