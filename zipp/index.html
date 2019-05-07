@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" cntentent="width=device-width, initial-scale=1">
+
+  <title> Squash Play </title>
+
+  <link rel="stylesheet" href="css/jquery.mobile-1.4.5.css">
+
+    <link rel="stylesheet" href="css/menu.css">
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+
+    <script src="js/menu.js"></script>
+
+      <script src="js/jquery.js"></script>
+
+      <script src="js/jquery.mobile-1.4.5.js"></script>
+
+      <!-- Bootstrap core CSS -->
+      <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+
+      <!-- Custom fonts for this template -->
+      <link href="vendor/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css">
+      <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+      <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+      <!-- Plugin CSS -->
+      <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet" type="text/css">
+
+      <!-- Custom styles for this template -->
+      <link href="css/freelancer.css" rel="stylesheet">
+
+      <!-- Bootstrap core JavaScript -->
+      <script src="vendor/jquery/jquery.js"></script>
+      <script src="vendor/popper/popper.js"></script>
+      <script src="vendor/bootstrap/js/bootstrap.js"></script>
+
+      <!-- Plugin JavaScript -->
+      <script src="vendor/jquery-easing/jquery.easing.js"></script>
+      <script src="vendor/magnific-popup/jquery.magnific-popup.js"></script>
+
+      <!-- Contact Form JavaScript -->
+      <script src="js/jqBootstrapValidation.js"></script>
+      <script src="js/contact_me.js"></script>
+
+      <!-- Custom scripts for this template -->
+      <script src="js/freelancer.js"></script>
+
+
+ <style type="text/css">
+    #holder{
+     height:800px;
+     width:100%;
+     margin-left:20px;
+
+    }
+     #place {
+     position: relative;
+
+     }
+     #place a{
+     font-size:0.8em;
+
+     }
+     #place li
+     {
+         list-style: none outside none;
+         position: absolute;
+
+     }
+
+     #place .seat{
+     background:url("img/available1.jpg") no-repeat scroll 0 0 transparent;
+     height:800px;
+     width:100%;
+     display:block;
+     }
+      #place .selectedSeat
+      {
+        background-image:url("img/booked1.jpg");
+      }
+       #place .selectingSeat
+      {
+        background-image:url("img/selected1.jpg");
+      }
+      #place .unavilableSeat
+      {
+        background-image:url("img/unavailable1.jpg");
+      }
+      #place .row-3, #place .row-4{
+        margin-top:10px;
+      }
+      #seatDescription{
+     padding:0px;
+     }
+      #seatDescription li{
+      verticle-align:middle;
+      list-style: none outside none;
+       padding-left:35px;
+      height:35px;
+      float:left;
+      }
+ #order_place{
+  position: relative;
+
+ }
+ .sitting{
+  position: relative;
+  display: inline-block;
+ }
+
+    </style>
+
+</head>
+
+
+<body >
+
+<!-- <a href="#about" data-transition="slide" data-direction="reverse" class="ui-btn"><</a> -->
+
+<!-- Start home page -->
+
+<div data-role="page" id="home">
+
+  <div data-role="panel" data-position="left" id="mypanel" >
+    <a href="#player" data-transition="slide" class="ui-btn" >Players</a>
+    <a href="#coach" data-transition="slide" class="ui-btn">Coach</a>
+    <a href="#about" data-transition="slide" class="ui-btn">About</a>
+    <a href="#contact" data-transition="slide" class="ui-btn">Contact Us</a>
+    <a href="#login" data-transition="slide" class="ui-btn">Login</a>
+  </div><!-- /panel -->
+
+	<div data-role="header">
+        <a href="#mypanel" data-transition="slide" class="ui-btn">Menu</a>
+      	<a href="#player" data-transition="slide" class="ui-btn" >></a>
+		<h1>Home</h1>
+
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+
+    <p></p>
+      <img src="img/profile.jpg" alt="home" class="imag">
+	</div><!-- /content -->
+
+	<div data-role="footer" data-position="fixed">
+
+
+  <a href="#coach" class="ui-btn ui-icon-user  ui-btn-icon-top" id="home1">Coach</a>
+  <a href="#player" class="ui-btn ui-icon-comment ui-btn-icon-top" id="back1"data-transition="slide" data-direction="reverse">Players</a>
+
+
+	</div><!-- /footer -->
+</div><!-- /page -->
+
+
+<!-- Start of player page-->
+<div data-role="page" id="player">
+
+  <div data-role="panel" data-position="left" id="mypanel" >
+    <a href="#home" data-transition="slide" data-direction="reverse" class="ui-btn">Home</a>
+    <a href="#coach" data-transition="slide" class="ui-btn">Coach</a>
+    <a href="#about" data-transition="slide" class="ui-btn">About</a>
+    <a href="#contact" data-transition="slide" class="ui-btn">Contact Us</a>
+    <a href="#login" data-transition="slide" class="ui-btn">Login</a>
+  </div>
+
+	<div data-role="header">
+
+    <a href="#mypanel" data-transition="slide" class="ui-btn">Menu</a>
+    <a href="#coach" data-transition="slide" class="ui-btn">></a>
+
+
+    		<div class="card">
+
+    				<h1>Card 1</h1>
+
+    			<div class="cardAction">
+
+    			</div>
+
+    		</div>
+
+        <div class="card">
+
+            <h1>Card 2</h1>
+
+            <img src="images/das1.png" alt="image_from_" />
+
+          <div class="cardAction">
+
+            <p></P>
+
+          </div>
+        </div>
+
+
+	</div><!-- /header -->
+
+	<div data-role="footer" data-position="fixed">
+    <a href="#home" class="ui-btn ui-icon-home  ui-btn-icon-top" id="home1">Home</a>
+    <a href="#home" class="ui-btn ui-icon-back ui-btn-icon-top" id="back1" data-transition="slide" data-direction="reverse">Back</a>
+	</div><!-- /footer -->
+
+</div><!-- /page -->
+
+<!-- Start of Coaching page-->
+<div data-role="page" id="coach">
+
+  <div data-role="panel" data-position="left" id="mypanel" >
+    <a href="#home" data-transition="slide" data-direction="reverse" class="ui-btn">Home</a>
+    <a href="#training" data-transition="slide" class="ui-btn">Training</a>
+    <a href="#player" data-transition="slide" data-direction="reverse" class="ui-btn">Player</a>
+    <a href="#about" data-transition="slide" class="ui-btn">About</a>
+    <a href="#contact" data-transition="slide" class="ui-btn">Contact Us</a>
+    <a href="#login" data-transition="slide" class="ui-btn">Login</a>
+  </div>
+
+	<div data-role="header"> <!-- Start header-->
+      <a href="#mypanel" data-transition="slide" class="ui-btn">Menu</a>
+    <a href="#about" data-transition="slide" class="ui-btn">></a>
+
+		<h1>Coach</h1>
+
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content"> <!-- content -->
+
+
+
+
+
+    <div id="holder"> <ul  id="place"> </ul> </div>
+
+
+
+
+	</div><!-- /content -->
+
+	<div data-role="footer" data-position="fixed">
+    <a href="#home" class="ui-btn ui-icon-home  ui-btn-icon-top" id="home1">Home</a>
+    <a href="#player" class="ui-btn ui-icon-back ui-btn-icon-top" id="back1" data-transition="slide" data-direction="reverse">Back</a>
+	</div><!-- /footer -->
+</div><!-- /page -->
+
+
+
+
+<!-- Start of Training page-->
+<div data-role="page" id="training">
+
+  <div data-role="panel" data-position="right" id="mypanel" >
+  </div>
+
+  <div data-role="panel" data-position="left" id="mypanel" >
+        <a href="#coach" data-transition="slide" class="ui-btn">Coach</a>
+
+  </div><!-- /panel -->
+
+	<div data-role="header">
+    <a href="#mypanel" data-transition="slide" class="ui-btn">Menu</a>
+
+
+		<h1>Training</h1>
+
+
+      <a href="#mypanel" data-transition="slide" class="ui-btn"></a>
+
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		<p>I'm the under 3AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA.</p>
+
+
+		<a href="#coach" data-transition="slide" data-direction="reverse" class="ui-btn">Coach</a>
+	</div><!-- /content -->
+
+	<div data-role="footer" data-position="fixed">
+
+    <a href="#home" class="ui-btn ui-icon-home  ui-btn-icon-top" id="home1">Home</a>
+    <a href="#coach" class="ui-btn ui-icon-back ui-btn-icon-top" id="back1" data-transition="slide" data-direction="reverse">Back</a>
+
+
+	</div><!-- /footer -->
+</div><!-- /page -->
+
+
+<!-- Start About page-->
+<div data-role="page" id="about">
+
+  <div data-role="panel" data-position="left" id="mypanel" >
+    <a href="#home" data-transition="slide" data-direction="reverse" class="ui-btn">Home</a>
+    <a href="#player" data-transition="slide" data-direction="reverse" class="ui-btn">Player</a>
+    <a href="#coach" data-transition="slide" data-direction="reverse" class="ui-btn">Coach</a>
+    <a href="#contact" data-transition="slide" class="ui-btn">Contact Us</a>
+    <a href="#login" data-transition="slide" class="ui-btn">Login</a>
+  </div>
+
+	<div data-role="header">
+    <a href="#mypanel" data-transition="slide" class="ui-btn">Menu</a>
+    <a href="#contact" data-transition="slide" class="ui-btn">></a>
+		<h1>About</h1>
+
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		<p>I'm fourth page 4444444444444444444444444444</p>
+
+	</div><!-- /content -->
+
+	<div data-role="footer" data-position="fixed">
+    <a href="#home" class="ui-btn ui-icon-home  ui-btn-icon-top" id="home1">Home</a>
+    <a href="#coach" class="ui-btn ui-icon-back ui-btn-icon-top" id="back1" data-transition="slide" data-direction="reverse">Back</a>
+	</div><!-- /footer -->
+</div><!-- /page -->
+
+
+<!-- Start Contact us Page-->
+<div data-role="page" id="contact">
+
+  <div data-role="panel" data-position="left" id="mypanel" >
+    <a href="#home" data-transition="slide" data-direction="reverse" class="ui-btn">Home</a>
+    <a href="#player" data-transition="slide" data-direction="reverse" class="ui-btn">Player</a>
+    <a href="#coach" data-transition="slide" data-direction="reverse" class="ui-btn">Coach</a>
+    <a href="#about" data-transition="slide" data-direction="reverse" class="ui-btn">About</a>
+    <a href="#login" data-transition="slide" class="ui-btn">Login</a>
+  </div>
+
+	<div data-role="header">
+    <a href="#mypanel" data-transition="slide" class="ui-btn">Menu</a>
+    <a href="#login" data-transition="slide" >></a>
+		<h1>Contact Us</h1>
+
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		<h2>contact us from here</h2>
+
+    <input type="text" name="fName" id="user" value="" placeholder="First Name">
+    <input type="text" name="lName" id="user" value="" placeholder="Last Name">
+    <input type="text" name="user" id="user" value="" placeholder="Phone number">
+    <input type="text" name="user" id="user" value="" placeholder="E-mail">
+
+    <div class="ui-field-contain">
+       <label for="textarea-1">Message:</label>
+      <textarea cols="40" rows="8" name="textarea-1" id="textarea-1" placeholder="leave us a message here"></textarea>
+
+    </div>
+
+    <form>
+        <input type="submit" value="Submit">
+    </form>
+
+    <div data-role="footer" >
+      <footer class="footer text-center">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 mb-5 mb-lg-0">
+            <h4 class="text-uppercase mb-4">Location</h4>
+            <p class="lead mb-0">0123456789
+              <br>CDU Casuarina</p>
+          </div>
+          <div class="col-md-4 mb-5 mb-lg-0">
+            <h4 class="text-uppercase mb-4">Around the Web</h4>
+            <ul class="list-inline mb-0">
+              <li class="list-inline-item">
+                <a class="btn btn-outline-light btn-social text-center rounded-circle" href="#">
+                  <i class="fa fa-fw fa-facebook"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a class="btn btn-outline-light btn-social text-center rounded-circle" href="#">
+                  <i class="fa fa-fw fa-google-plus"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a class="btn btn-outline-light btn-social text-center rounded-circle" href="#">
+                  <i class="fa fa-fw fa-twitter"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a class="btn btn-outline-light btn-social text-center rounded-circle" href="#">
+                  <i class="fa fa-fw fa-linkedin"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a class="btn btn-outline-light btn-social text-center rounded-circle" href="#">
+                  <i class="fa fa-fw fa-dribbble"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <h4 class="text-uppercase mb-4">Direct Contact</h4>
+            <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-top ui-icon-mail">Message</button>
+            <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-top ui-icon-phone">phone</button>
+            <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-top ui-icon-mail">E-mail</button>
+            <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-top ui-icon-comment">Chat</button>
+          </div>
+        </div>
+      </div>
+    </footer>
+    </div><!-- /footer -->
+
+	 </div><!-- /content -->
+
+	<div data-role="footer" data-position="fixed">
+    <a href="#home" class="ui-btn ui-icon-home  ui-btn-icon-top" id="home1">Home</a>
+  <a href="#home" class="ui-btn ui-icon-back ui-btn-icon-top" id="back1" data-transition="slide" data-direction="reverse">Back</a>
+	</div><!-- /footer -->
+</div><!-- /page -->
+
+
+
+
+<!-- Start Login page-->
+<div data-role="page" id="login">
+
+  <div data-role="panel" data-position="left" id="mypanel" >
+    <a href="#home" data-transition="slide" data-direction="reverse" class="ui-btn">Home</a>
+    <a href="#player" data-transition="slide" data-direction="reverse" class="ui-btn">Player</a>
+    <a href="#coach" data-transition="slide" data-direction="reverse" class="ui-btn">Coach</a>
+    <a href="#about" data-transition="slide" data-direction="reverse" class="ui-btn">About</a>
+    <a href="#contact" data-transition="slide" data-direction="reverse" class="ui-btn">Contact Us</a>
+  </div>
+
+  	<div data-role="header">
+
+      <a href="#mypanel" data-transition="slide" class="ui-btn">Menu</a>
+        <a href="#contact" data-transition="slide" data-direction="reverse" class="ui-btn"><</a>
+
+
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+
+    <h2> Login or create your Account</h2>
+
+    <form >
+      <input type="text" name="user" id="user" value="" placeholder="User name or E-mail">
+      <input type="password" name="password" id="pw" value="" placeholder="Password">
+      <button name="login-btn" id="login-btn" type="submit" value="submit">login</button>
+    </form>
+
+    <div data-role="collapsible" data-theme="a" data-content-theme="b" id="account">
+
+    <h2><button name="login-btn" id="login-btn" type="submit" value="submit">Create Account</button></h2>
+
+    <p>You are about to create you new account</p>
+      <input type="text" name="fName" id="user" value="" placeholder="First Name">
+      <input type="text" name="lName" id="user" value="" placeholder="Last Name">
+      <input type="email" name="user" id="user" value="" placeholder="E-mail">
+      <input type="password" name="user" id="user" value="" placeholder="password">
+      <input type="password" name="user" id="user" value="" placeholder="Repeat password">
+      <button name="login-btn" id="login-btn" type="submit" value="submit">Submit</button>
+    </div>
+
+
+    <div data-role="footer" data-position="fixed">
+      <a href="#home" class="ui-btn ui-icon-home  ui-btn-icon-top" id="home1">Home</a>
+    <a href="#home" class="ui-btn ui-icon-back ui-btn-icon-top" id="back1" data-transition="slide" data-direction="reverse">Back</a>
+    </div><!-- /footer -->
+  </div>
+  </div><!-- /page -->
+
+
+
+</body>
+</html>
