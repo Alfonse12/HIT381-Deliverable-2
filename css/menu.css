@@ -3,6 +3,84 @@
   background-color:red;
   }
 
+  #holder{
+   height:800px;
+   width:100%;
+   margin-left:20px;
+
+  }
+   #place {
+   position: relative;
+
+   }
+   #place a{
+   font-size:0.8em;
+
+   }
+   #place li
+   {
+       list-style: none outside none;
+       position: absolute;
+
+   }
+
+   #place .seat{
+   background:url("img/available1.jpg") no-repeat scroll 0 0 transparent;
+   height:800px;
+   width:100%;
+   display:block;
+   }
+    #place .selectedSeat
+    {
+      background-image:url("img/booked1.jpg");
+    }
+     #place .selectingSeat
+    {
+      background-image:url("img/selected1.jpg");
+    }
+    #place .unavilableSeat
+    {
+      background-image:url("img/unavailable1.jpg");
+    }
+    #place .row-3, #place .row-4{
+      margin-top:10px;
+    }
+    #seatDescription{
+   padding:0px;
+   }
+    #seatDescription li{
+    verticle-align:middle;
+    list-style: none outside none;
+     padding-left:35px;
+    height:35px;
+    float:left;
+    }
+  #order_place{
+  position: relative;
+
+  }
+  .sitting{
+  position: relative;
+  display: inline-block;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 #home1{
