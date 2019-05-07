@@ -17,10 +17,9 @@
 
     <script src="js/menu.js"></script>
 
-    <script src="js/jquery.js"></script>
+      <script src="js/jquery.js"></script>
 
-    <script src="js/jquery.mobile-1.4.5.js"></script>
-
+      <script src="js/jquery.mobile-1.4.5.js"></script>
 
       <!-- Bootstrap core CSS -->
       <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
@@ -55,16 +54,14 @@
 
  <style type="text/css">
     #holder{
-     height:750px;
+     height:800px;
      width:100%;
-     background-color:white;
-     border:1px solid #A4A4A4;
      margin-left:20px;
 
     }
      #place {
      position: relative;
-     margin:20px;
+
      }
      #place a{
      font-size:0.8em;
@@ -80,7 +77,7 @@
      #place .seat{
      background:url("img/available1.jpg") no-repeat scroll 0 0 transparent;
      height:800px;
-     width:600px;
+     width:100%;
      display:block;
      }
       #place .selectedSeat
@@ -98,7 +95,7 @@
       #place .row-3, #place .row-4{
         margin-top:10px;
       }
-     #seatDescription{
+      #seatDescription{
      padding:0px;
      }
       #seatDescription li{
@@ -114,14 +111,13 @@
  }
  .sitting{
   position: relative;
-  color:#777;
   display: inline-block;
  }
+
     </style>
 
-
-
 </head>
+
 
 <body >
 
@@ -225,7 +221,7 @@
     <a href="#login" data-transition="slide" class="ui-btn">Login</a>
   </div>
 
-	<div data-role="header">
+	<div data-role="header"> <!-- Start header-->
       <a href="#mypanel" data-transition="slide" class="ui-btn">Menu</a>
     <a href="#about" data-transition="slide" class="ui-btn">></a>
 
@@ -233,13 +229,15 @@
 
 	</div><!-- /header -->
 
-	<div role="main" class="ui-content">
+	<div role="main" class="ui-content"> <!-- content -->
 
 
-    <div id="holder">
-        <ul  id="place"></ul>
-    </div>
-    <div id="order_place"></div>
+
+
+
+    <div id="holder"> <ul  id="place"> </ul> </div>
+
+
 
 
 	</div><!-- /content -->
@@ -277,6 +275,8 @@
 
 	<div role="main" class="ui-content">
 		<p>I'm the under 3AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA.</p>
+
+
 		<a href="#coach" data-transition="slide" data-direction="reverse" class="ui-btn">Coach</a>
 	</div><!-- /content -->
 

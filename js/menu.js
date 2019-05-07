@@ -1,4 +1,5 @@
 
+
         $(function () {
             var settings = {
                 reservedSeat: 2,
@@ -45,9 +46,12 @@
             //init();
 
             //Case II: If already booked
-            var Seats =[ [0, 0, 0, 0],
-                         [2, 2, 2, 2],
-                         [3, 3, 3, 3],
+            var Seats =[ [0],
+                         [2],
+                         [3],
+                         [0],
+                         [0],
+                         [0],
                       ];
 
             init(Seats);
@@ -55,8 +59,10 @@
             var clickNum=0;
             $('.' + settings.seatCss).on('click',function () {
 
+
+
             if ($(this).hasClass(settings.selectedSeatCss)){
-                alert('This seat is already reserved');
+                alert('This court is already reserved');
             }
             else if($(this).hasClass(settings.unavaliableSeatCss))
             {
@@ -68,9 +74,11 @@
                if($(this).hasClass(settings.selectingSeatCss))
                 {
                     $(this).removeClass(settings.selectingSeatCss);
+                    alert('You are sure you want to cancel you booking ');
                      var SeatNo=$(this).closest("li").attr("title");
                      console.log($('li.selectingSeat').each(function()
                       {$(this).attr("href")
+
                     }));
                     $(".sitting:last").remove();
 
