@@ -54,263 +54,197 @@
       <!-- Custom scripts for this template -->
       <script src="js/freelancer.js"></script>
 
+      <script>
+                 $(document).ready(function(){
+                  var teams = [
+                    "Banks"
+                       ];
+                  $(".styleteam" ).autocomplete({
+                    source: teams
+                  });
 
- <style type="text/css">
-    #holder{
-     height:800px;
-     width:100%;
-     margin-left:20px;
+              	$(".date").datetimepicker();
+              	var gradesss =[
+              	 "A Men",
+              	 "A Women"
+              	  ];
 
-    }
-     #place {
-     position: relative;
+              	 $(".stylegrade").autocomplete({
+              	  source:gradesss
+              	 });
+              	var umpire = [
 
-     }
-     #place a{
-     font-size:0.8em;
+              	   "R. Yeoh Yong"];
 
-     }
-     #place li
-     {
-         list-style: none outside none;
-         position: absolute;
+              	  $(".styleumpire").autocomplete({
+              	     source: umpire
+              	  });
+              	 });
+               </script>
 
-     }
+              <script>
+              	 $(document).ready(function(){
+              	  $("#addgames").click(function () {
+              		$("#date,#teamA,#teamB,#grade,#Location,#ump1,#ump2").css({"background-color": "white"});
 
-     #place .seat{
-     background:url("img/available1.jpg") no-repeat scroll 0 0 transparent;
-     height:800px;
-     width:100%;
-     display:block;
-     }
-      #place .selectedSeat
-      {
-        background-image:url("img/booked1.jpg");
-      }
-       #place .selectingSeat
-      {
-        background-image:url("img/selected1.jpg");
-      }
-      #place .unavilableSeat
-      {
-        background-image:url("img/unavailable1.jpg");
-      }
-      #place .row-3, #place .row-4{
-        margin-top:10px;
-      }
-      #seatDescription{
-     padding:0px;
-     }
-      #seatDescription li{
-      verticle-align:middle;
-      list-style: none outside none;
-       padding-left:35px;
-      height:35px;
-      float:left;
-      }
- #order_place{
-  position: relative;
+              		if ( $("#date").val() =='' &&  $("#teamA").val()=='' && $("#teamB").val()=='' && $("#grade").val()=='' && $("#Location").val()=='' && $("#ump1").val()=='' && $("#ump2").val()==''  )
+              		  {
+              		    alert("Please input all fields!");
+              			$("#date,#teamA,#teamB,#grade,#Location,#ump1,#ump2").css({"background-color": "yellow"});
 
- }
- .sitting{
-  position: relative;
-  display: inline-block;
- }
-
-    </style>
+              		  }
+              		 else if ($("#teamA").val()=='' && $("#teamB").val()=='' )
+              		 {
+                          alert("please fill all the fields!");
+              			$("#teamA").focus();
+              			$("#teamA").css({"background-color": "white"});
+              			$("#teamA").css({"background-color": "white"});
+              	}
 
 
-    <script>
-               $(document).ready(function(){
-                var teams = [
-                  "Banks"
-                     ];
-                $(".styleteam" ).autocomplete({
-                  source: teams
+              		else if ($("#teamA").val() == $("#teamB").val() || $("#teamB").val() == $("#teamA").val() )
+              	      {
+                          alert("Make sure you don't have the same team!");
+              			$("#teamA").focus();
+              			$("#teamA").css({"background-color": "red"});
+              			$("#teamB").css({"background-color": "red"});
+                        }
+
+              		else if ($("#ump1").val()=='' && $("#ump2").val()=='')
+              		{
+              		    alert("Umpire 1 cannot be the same with umpire 2");
+              			$("#ump1").focus();
+              			$("#ump1").css({"background-color": "red"});
+              			$("#ump2").css({"background-color": "red"});
+
+              		}
+              		 else if ($("#ump1").val() == $("#ump2").val() || $("#ump2").val() == $("#ump1").val() )
+              		 {
+              		    alert("Umpire 1 cannot be the same with umpire 2");
+              			$("#ump1").focus();
+              			$("#ump1").css({"background-color": "red"});
+              			$("#ump2").css({"background-color": "red"});
+              		 }
+
+              		else if ($("#date").val() ==''){
+              		  alert("Please select date for match");
+              		  $("#date").focus();
+              		 /* $("#date").addClass("error");
+              		  $("#dateError").html("You Must Enter a Date!");*/
+              		}
+              		/*else{
+              			$("#date").removeClass("error");
+              			$("#dateError").html("");
+              		}
+
+              		*/
+              		else if($("#teamA").val() =='')
+              		{
+              		  alert("Please select team in Team A ");
+              		  $("#teamA").focus();
+              		}
+
+              		else if($("#teamB").val() =='')
+              		{
+              		  alert("Please select team in team B");
+              		  $("#teamB").focus();
+              		}
+
+              		else if($("#grade").val() =='')
+              		{
+              		  alert("Please select grade under Grade");
+              		  $("#grade").focus();
+              		}
+
+              		else if($("#Location").val() =='')
+              		{
+              		  alert("Please select a location");
+              		  $("#Location").focus();
+              		}
+
+              		else if($("#ump1").val() =='')
+              		{
+              		  alert("Please select an Umpire in umpure 1");
+              		  $("#ump1").focus();
+              		}
+
+              		else if($("#ump2").val() =='')
+              		{
+              		  alert("Please select an Umpire in umpire 2");
+              		  $("#ump2").focus();
+              		}
+              		else
+              		{
+              		 alert("Thank you, The game was added")
+              		 $("#gamesform")[0].reset();
+              		}
+
+              	  });
+              	  $("#game2,#game3,#game4,#game5,#game6,#game7,#game8,#game9,#game10,#game11,#game12,#game13,#game14,#game15,#game16,#game17,#game18,#addfields2").hide();
+
+                   $("#addfields").click(function() {
+              	    $("#game2").slideDown("slow");
+              	    $("#addfields").click(function(){
+              		   $("#game3").slideDown("slow");
+              		   $("#addfields").click(function(){
+              		     $("#game4").slideDown("slow");
+              		     $("#addfields").click(function(){
+              			    $("#game5").slideDown("slow");
+              			    $("#addfields").click(function(){
+              			        $("#game6").slideDown("slow");
+              			        $("#addfields").click(function(){
+              				        $("#game7").slideDown("slow");
+              				        $("#addfields").click(function(){
+              						   $("#game8").slideDown("slow");
+              				           $("#addfields").click(function(){
+              						      $("#game9").slideDown("slow");
+              							     $("#addfields").click(function(){
+              								    $("#game10").slideDown("slow");
+              									$("#addfields").hide();
+              									$("#addfields2").show();
+
+              								    });
+              							   });
+              						   });
+              				       });
+              			        });
+              			    });
+              		    });
+              	    });
+              	});
+
+                  $("#addfields2").click(function(){
+              		$("#game11").slideDown("slow");
+              		$("#addfields2").click(function(){
+              			$("#game12").slideDown("slow");
+              			$("#addfields2").click(function(){
+              				$("#game13").slideDown("slow");
+              				$("#addfields2").click(function(){
+              					$("#game14").slideDown("slow");
+              					$("#addfields2").click(function(){
+              						$("#game15").slideDown("slow");
+              						$("#addfields2").click(function(){
+              							$("#game16").slideDown("slow");
+              							$("#addfields2").click(function(){
+              								$("#game17").slideDown("slow");
+              								$("#addfields2").click(function(){
+              									$("#game18").slideDown("slow");
+              									$("#addfields2").click(function(){
+              									 alert("Only 18 rows are accepteble!");
+
+              									});
+              								});
+              							});
+              						});
+              					});
+              				});
+              			});
+              		});
+              	});
+
                 });
 
-            	$(".date").datetimepicker();
-            	var gradesss =[
-            	 "A Men",
-            	 "A Women"
-            	  ];
-
-            	 $(".stylegrade").autocomplete({
-            	  source:gradesss
-            	 });
-            	var umpire = [
-
-            	   "R. Yeoh Yong"];
-
-            	  $(".styleumpire").autocomplete({
-            	     source: umpire
-            	  });
-            	 });
-             </script>
-
-            <script>
-            	 $(document).ready(function(){
-            	  $("#addgames").click(function () {
-            		$("#date,#teamA,#teamB,#grade,#Location,#ump1,#ump2").css({"background-color": "white"});
-
-            		if ( $("#date").val() =='' &&  $("#teamA").val()=='' && $("#teamB").val()=='' && $("#grade").val()=='' && $("#Location").val()=='' && $("#ump1").val()=='' && $("#ump2").val()==''  )
-            		  {
-            		    alert("Please input all fields!");
-            			$("#date,#teamA,#teamB,#grade,#Location,#ump1,#ump2").css({"background-color": "yellow"});
-
-            		  }
-            		 else if ($("#teamA").val()=='' && $("#teamB").val()=='' )
-            		 {
-                        alert("please fill all the fields!");
-            			$("#teamA").focus();
-            			$("#teamA").css({"background-color": "white"});
-            			$("#teamA").css({"background-color": "white"});
-            	}
-
-
-            		else if ($("#teamA").val() == $("#teamB").val() || $("#teamB").val() == $("#teamA").val() )
-            	      {
-                        alert("Make sure you don't have the same team!");
-            			$("#teamA").focus();
-            			$("#teamA").css({"background-color": "red"});
-            			$("#teamB").css({"background-color": "red"});
-                      }
-
-            		else if ($("#ump1").val()=='' && $("#ump2").val()=='')
-            		{
-            		    alert("Umpire 1 cannot be the same with umpire 2");
-            			$("#ump1").focus();
-            			$("#ump1").css({"background-color": "red"});
-            			$("#ump2").css({"background-color": "red"});
-
-            		}
-            		 else if ($("#ump1").val() == $("#ump2").val() || $("#ump2").val() == $("#ump1").val() )
-            		 {
-            		    alert("Umpire 1 cannot be the same with umpire 2");
-            			$("#ump1").focus();
-            			$("#ump1").css({"background-color": "red"});
-            			$("#ump2").css({"background-color": "red"});
-            		 }
-
-            		else if ($("#date").val() ==''){
-            		  alert("Please select date for match");
-            		  $("#date").focus();
-            		 /* $("#date").addClass("error");
-            		  $("#dateError").html("You Must Enter a Date!");*/
-            		}
-            		/*else{
-            			$("#date").removeClass("error");
-            			$("#dateError").html("");
-            		}
-
-            		*/
-            		else if($("#teamA").val() =='')
-            		{
-            		  alert("Please select team in Team A ");
-            		  $("#teamA").focus();
-            		}
-
-            		else if($("#teamB").val() =='')
-            		{
-            		  alert("Please select team in team B");
-            		  $("#teamB").focus();
-            		}
-
-            		else if($("#grade").val() =='')
-            		{
-            		  alert("Please select grade under Grade");
-            		  $("#grade").focus();
-            		}
-
-            		else if($("#Location").val() =='')
-            		{
-            		  alert("Please select a location");
-            		  $("#Location").focus();
-            		}
-
-            		else if($("#ump1").val() =='')
-            		{
-            		  alert("Please select an Umpire in umpure 1");
-            		  $("#ump1").focus();
-            		}
-
-            		else if($("#ump2").val() =='')
-            		{
-            		  alert("Please select an Umpire in umpire 2");
-            		  $("#ump2").focus();
-            		}
-            		else
-            		{
-            		 alert("Thank you, The game was added")
-            		 $("#gamesform")[0].reset();
-            		}
-
-            	  });
-            	  $("#game2,#game3,#game4,#game5,#game6,#game7,#game8,#game9,#game10,#game11,#game12,#game13,#game14,#game15,#game16,#game17,#game18,#addfields2").hide();
-
-                 $("#addfields").click(function() {
-            	    $("#game2").slideDown("slow");
-            	    $("#addfields").click(function(){
-            		   $("#game3").slideDown("slow");
-            		   $("#addfields").click(function(){
-            		     $("#game4").slideDown("slow");
-            		     $("#addfields").click(function(){
-            			    $("#game5").slideDown("slow");
-            			    $("#addfields").click(function(){
-            			        $("#game6").slideDown("slow");
-            			        $("#addfields").click(function(){
-            				        $("#game7").slideDown("slow");
-            				        $("#addfields").click(function(){
-            						   $("#game8").slideDown("slow");
-            				           $("#addfields").click(function(){
-            						      $("#game9").slideDown("slow");
-            							     $("#addfields").click(function(){
-            								    $("#game10").slideDown("slow");
-            									$("#addfields").hide();
-            									$("#addfields2").show();
-
-            								    });
-            							   });
-            						   });
-            				       });
-            			        });
-            			    });
-            		    });
-            	    });
-            	});
-
-                $("#addfields2").click(function(){
-            		$("#game11").slideDown("slow");
-            		$("#addfields2").click(function(){
-            			$("#game12").slideDown("slow");
-            			$("#addfields2").click(function(){
-            				$("#game13").slideDown("slow");
-            				$("#addfields2").click(function(){
-            					$("#game14").slideDown("slow");
-            					$("#addfields2").click(function(){
-            						$("#game15").slideDown("slow");
-            						$("#addfields2").click(function(){
-            							$("#game16").slideDown("slow");
-            							$("#addfields2").click(function(){
-            								$("#game17").slideDown("slow");
-            								$("#addfields2").click(function(){
-            									$("#game18").slideDown("slow");
-            									$("#addfields2").click(function(){
-            									 alert("Only 18 rows are accepteble!");
-
-            									});
-            								});
-            							});
-            						});
-            					});
-            				});
-            			});
-            		});
-            	});
-
-              });
-
-</script>
+  </script>
 
 
 </head>
@@ -1087,7 +1021,6 @@
 
   <div data-role="panel" data-position="left" id="mypanel" >
     <a href="#home" data-transition="slide" data-direction="reverse" class="ui-btn">Home</a>
-    <a href="#training" data-transition="slide" class="ui-btn">Training</a>
     <a href="#player" data-transition="slide" data-direction="reverse" class="ui-btn">Player</a>
     <a href="#court" data-transition="slide" class="ui-btn">Court</a>
     <a href="#contact" data-transition="slide" class="ui-btn">Contact Us</a>
@@ -1104,324 +1037,7 @@
 
 	<div role="main" class="ui-content"> <!-- content -->
 
-<h2>Add Games</h2>
 
-    <div id="divgame">
-    	<form id="gamesform">
-         <fieldset id="framegames">
-          <legend id="glegend"></legend>
-    	   <div id="game1">
-    		<input type="text" id="date" class="date" placeholder="Date/time" />
-    		<input type="text" id="teamA" class="styleteam" placeholder="Team A or Player A" />
-    		<input type="text" id="teamB" class="styleteam" placeholder="Team B or Player B" />
-    		<select id="Location" class="Location"><option selected>location</option>
-          <option >Court 1</option>
-          <option >Court 2</option>
-          <option >Court 3</option>
-          <option >Court 4</option>
-          <option >Court 5</option>
-          <option >Court 6</option>
-        </select>
-    		<div id="dateError" class="errorField"></div>
-    		<div id="teamAError" class="errorField"></div>
-    		<div id="teamBError" class="errorField"></div>
-    	  </div>
-
-        <div id="game2">
-       <input type="text" id="date" class="date" placeholder="Date/time" />
-       <input type="text" id="teamA" class="styleteam" placeholder="Team A or Player A" />
-       <input type="text" id="teamB" class="styleteam" placeholder="Team B or Player B" />
-       <select id="Location" class="Location"><option selected>location</option>
-         <option >Court 1</option>
-         <option >Court 2</option>
-         <option >Court 3</option>
-         <option >Court 4</option>
-         <option >Court 5</option>
-         <option >Court 6</option>
-       </select>
-       <div id="dateError" class="errorField"></div>
-       <div id="teamAError" class="errorField"></div>
-       <div id="teamBError" class="errorField"></div>
-       </div>
-
-       <div id="game3">
-      <input type="text" id="date" class="date" placeholder="Date/time" />
-      <input type="text" id="teamA" class="styleteam" placeholder="Team A or Player A" />
-      <input type="text" id="teamB" class="styleteam" placeholder="Team B or Player B" />
-      <select id="Location" class="Location"><option selected>location</option>
-        <option >Court 1</option>
-        <option >Court 2</option>
-        <option >Court 3</option>
-        <option >Court 4</option>
-        <option >Court 5</option>
-        <option >Court 6</option>
-      </select>
-      <div id="dateError" class="errorField"></div>
-      <div id="teamAError" class="errorField"></div>
-      <div id="teamBError" class="errorField"></div>
-      </div>
-
-      <div id="game4">
-     <input type="text" id="date" class="date" placeholder="Date/time" />
-     <input type="text" id="teamA" class="styleteam" placeholder="Team A or Player A" />
-     <input type="text" id="teamB" class="styleteam" placeholder="Team B or Player B" />
-     <select id="Location" class="Location"><option selected>location</option>
-       <option >Court 1</option>
-       <option >Court 2</option>
-       <option >Court 3</option>
-       <option >Court 4</option>
-       <option >Court 5</option>
-       <option >Court 6</option>
-     </select>
-     <div id="dateError" class="errorField"></div>
-     <div id="teamAError" class="errorField"></div>
-     <div id="teamBError" class="errorField"></div>
-     </div>
-
-     <div id="game5">
-    <input type="text" id="date" class="date" placeholder="Date/time" />
-    <input type="text" id="teamA" class="styleteam" placeholder="Team A or Player A" />
-    <input type="text" id="teamB" class="styleteam" placeholder="Team B or Player B" />
-    <select id="Location" class="Location"><option selected>location</option>
-      <option >Court 1</option>
-      <option >Court 2</option>
-      <option >Court 3</option>
-      <option >Court 4</option>
-      <option >Court 5</option>
-      <option >Court 6</option>
-    </select>
-    <div id="dateError" class="errorField"></div>
-    <div id="teamAError" class="errorField"></div>
-    <div id="teamBError" class="errorField"></div>
-    </div>
-
-    <div id="game6">
-   <input type="text" id="date" class="date" placeholder="Date/time" />
-   <input type="text" id="teamA" class="styleteam" placeholder="Team A or Player A" />
-   <input type="text" id="teamB" class="styleteam" placeholder="Team B or Player B" />
-   <select id="Location" class="Location"><option selected>location</option>
-     <option >Court 1</option>
-     <option >Court 2</option>
-     <option >Court 3</option>
-     <option >Court 4</option>
-     <option >Court 5</option>
-     <option >Court 6</option>
-   </select>
-   <div id="dateError" class="errorField"></div>
-   <div id="teamAError" class="errorField"></div>
-   <div id="teamBError" class="errorField"></div>
-   </div>
-
-   <div id="game7">
-  <input type="text" id="date" class="date" placeholder="Date/time" />
-  <input type="text" id="teamA" class="styleteam" placeholder="Team A or Player A" />
-  <input type="text" id="teamB" class="styleteam" placeholder="Team B or Player B" />
-  <select id="Location" class="Location"><option selected>location</option>
-    <option >Court 1</option>
-    <option >Court 2</option>
-    <option >Court 3</option>
-    <option >Court 4</option>
-    <option >Court 5</option>
-    <option >Court 6</option>
-  </select>
-  <div id="dateError" class="errorField"></div>
-  <div id="teamAError" class="errorField"></div>
-  <div id="teamBError" class="errorField"></div>
-  </div>
-
-  <div id="game8">
- <input type="text" id="date" class="date" placeholder="Date/time" />
- <input type="text" id="teamA" class="styleteam" placeholder="Team A or Player A" />
- <input type="text" id="teamB" class="styleteam" placeholder="Team B or Player B" />
- <select id="Location" class="Location"><option selected>location</option>
-   <option >Court 1</option>
-   <option >Court 2</option>
-   <option >Court 3</option>
-   <option >Court 4</option>
-   <option >Court 5</option>
-   <option >Court 6</option>
- </select>
- <div id="dateError" class="errorField"></div>
- <div id="teamAError" class="errorField"></div>
- <div id="teamBError" class="errorField"></div>
- </div>
-
- <div id="game9">
-<input type="text" id="date" class="date" placeholder="Date/time" />
-<input type="text" id="teamA" class="styleteam" placeholder="Team A or Player A" />
-<input type="text" id="teamB" class="styleteam" placeholder="Team B or Player B" />
-<select id="Location" class="Location"><option selected>location</option>
-  <option >Court 1</option>
-  <option >Court 2</option>
-  <option >Court 3</option>
-  <option >Court 4</option>
-  <option >Court 5</option>
-  <option >Court 6</option>
-</select>
-<div id="dateError" class="errorField"></div>
-<div id="teamAError" class="errorField"></div>
-<div id="teamBError" class="errorField"></div>
-</div>
-
-<div id="game10">
-<input type="text" id="date" class="date" placeholder="Date/time" />
-<input type="text" id="teamA" class="styleteam" placeholder="Team A or Player A" />
-<input type="text" id="teamB" class="styleteam" placeholder="Team B or Player B" />
-<select id="Location" class="Location"><option selected>location</option>
- <option >Court 1</option>
- <option >Court 2</option>
- <option >Court 3</option>
- <option >Court 4</option>
- <option >Court 5</option>
- <option >Court 6</option>
-</select>
-<div id="dateError" class="errorField"></div>
-<div id="teamAError" class="errorField"></div>
-<div id="teamBError" class="errorField"></div>
-</div>
-
-<div id="game11">
-<input type="text" id="date" class="date" placeholder="Date/time" />
-<input type="text" id="teamA" class="styleteam" placeholder="Team A or Player A" />
-<input type="text" id="teamB" class="styleteam" placeholder="Team B or Player B" />
-<select id="Location" class="Location"><option selected>location</option>
- <option >Court 1</option>
- <option >Court 2</option>
- <option >Court 3</option>
- <option >Court 4</option>
- <option >Court 5</option>
- <option >Court 6</option>
-</select>
-<div id="dateError" class="errorField"></div>
-<div id="teamAError" class="errorField"></div>
-<div id="teamBError" class="errorField"></div>
-</div>
-
-<div id="game12">
-<input type="text" id="date" class="date" placeholder="Date/time" />
-<input type="text" id="teamA" class="styleteam" placeholder="Team A or Player A" />
-<input type="text" id="teamB" class="styleteam" placeholder="Team B or Player B" />
-<select id="Location" class="Location"><option selected>location</option>
- <option >Court 1</option>
- <option >Court 2</option>
- <option >Court 3</option>
- <option >Court 4</option>
- <option >Court 5</option>
- <option >Court 6</option>
-</select>
-<div id="dateError" class="errorField"></div>
-<div id="teamAError" class="errorField"></div>
-<div id="teamBError" class="errorField"></div>
-</div>
-
-<div id="game13">
-<input type="text" id="date" class="date" placeholder="Date/time" />
-<input type="text" id="teamA" class="styleteam" placeholder="Team A or Player A" />
-<input type="text" id="teamB" class="styleteam" placeholder="Team B or Player B" />
-<select id="Location" class="Location"><option selected>location</option>
- <option >Court 1</option>
- <option >Court 2</option>
- <option >Court 3</option>
- <option >Court 4</option>
- <option >Court 5</option>
- <option >Court 6</option>
-</select>
-<div id="dateError" class="errorField"></div>
-<div id="teamAError" class="errorField"></div>
-<div id="teamBError" class="errorField"></div>
-</div>
-
-<div id="game14">
-<input type="text" id="date" class="date" placeholder="Date/time" />
-<input type="text" id="teamA" class="styleteam" placeholder="Team A or Player A" />
-<input type="text" id="teamB" class="styleteam" placeholder="Team B or Player B" />
-<select id="Location" class="Location"><option selected>location</option>
- <option >Court 1</option>
- <option >Court 2</option>
- <option >Court 3</option>
- <option >Court 4</option>
- <option >Court 5</option>
- <option >Court 6</option>
-</select>
-<div id="dateError" class="errorField"></div>
-<div id="teamAError" class="errorField"></div>
-<div id="teamBError" class="errorField"></div>
-</div>
-
-<div id="game15">
-<input type="text" id="date" class="date" placeholder="Date/time" />
-<input type="text" id="teamA" class="styleteam" placeholder="Team A or Player A" />
-<input type="text" id="teamB" class="styleteam" placeholder="Team B or Player B" />
-<select id="Location" class="Location"><option selected>location</option>
- <option >Court 1</option>
- <option >Court 2</option>
- <option >Court 3</option>
- <option >Court 4</option>
- <option >Court 5</option>
- <option >Court 6</option>
-</select>
-<div id="dateError" class="errorField"></div>
-<div id="teamAError" class="errorField"></div>
-<div id="teamBError" class="errorField"></div>
-</div>
-
-<div id="game16">
-<input type="text" id="date" class="date" placeholder="Date/time" />
-<input type="text" id="teamA" class="styleteam" placeholder="Team A or Player A" />
-<input type="text" id="teamB" class="styleteam" placeholder="Team B or Player B" />
-<select id="Location" class="Location"><option selected>location</option>
- <option >Court 1</option>
- <option >Court 2</option>
- <option >Court 3</option>
- <option >Court 4</option>
- <option >Court 5</option>
- <option >Court 6</option>
-</select>
-<div id="dateError" class="errorField"></div>
-<div id="teamAError" class="errorField"></div>
-<div id="teamBError" class="errorField"></div>
-</div>
-
-<div id="game17">
-<input type="text" id="date" class="date" placeholder="Date/time" />
-<input type="text" id="teamA" class="styleteam" placeholder="Team A or Player A" />
-<input type="text" id="teamB" class="styleteam" placeholder="Team B or Player B" />
-<select id="Location" class="Location"><option selected>location</option>
- <option >Court 1</option>
- <option >Court 2</option>
- <option >Court 3</option>
- <option >Court 4</option>
- <option >Court 5</option>
- <option >Court 6</option>
-</select>
-<div id="dateError" class="errorField"></div>
-<div id="teamAError" class="errorField"></div>
-<div id="teamBError" class="errorField"></div>
-</div>
-
-<div id="game18">
-<input type="text" id="date" class="date" placeholder="Date/time" />
-<input type="text" id="teamA" class="styleteam" placeholder="Team A or Player A" />
-<input type="text" id="teamB" class="styleteam" placeholder="Team B or Player B" />
-<select id="Location" class="Location"><option selected>location</option>
- <option >Court 1</option>
- <option >Court 2</option>
- <option >Court 3</option>
- <option >Court 4</option>
- <option >Court 5</option>
- <option >Court 6</option>
-</select>
-<div id="dateError" class="errorField"></div>
-<div id="teamAError" class="errorField"></div>
-<div id="teamBError" class="errorField"></div>
-</div>
-
-    		<input type="button" id="addfields" value="ADD NEW FIELDS" />
-    		<input type="button" id="addgames" value="ADD GAMES" />
-
-    	   </fieldset>
-    	  </form>
-    	</div>
 
 	<h2>List of coaches </h2>
 
@@ -1718,47 +1334,6 @@
 </div><!-- /page -->
 
 
-
-
-<!-- Start of Training page-->
-<div data-role="page" id="training">
-
-  <div data-role="panel" data-position="right" id="mypanel" >
-  </div>
-
-  <div data-role="panel" data-position="left" id="mypanel" >
-        <a href="#coach" data-transition="slide" class="ui-btn">Coach</a>
-
-  </div><!-- /panel -->
-
-	<div data-role="header">
-    <a href="#mypanel" data-transition="slide" class="ui-btn">Menu</a>
-
-
-		<h1>Training</h1>
-
-
-      <a href="#mypanel" data-transition="slide" class="ui-btn"></a>
-
-	</div><!-- /header -->
-
-	<div role="main" class="ui-content">
-		<p>I'm the under 3AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA.</p>
-
-
-		<a href="#coach" data-transition="slide" data-direction="reverse" class="ui-btn">Coach</a>
-	</div><!-- /content -->
-
-	<div data-role="footer" data-position="fixed">
-
-    <a href="#home" class="ui-btn ui-icon-home  ui-btn-icon-top" id="home1">Home</a>
-    <a href="#coach" class="ui-btn ui-icon-back ui-btn-icon-top" id="back1" data-transition="slide" data-direction="reverse">Back</a>
-
-
-	</div><!-- /footer -->
-</div><!-- /page -->
-
-
 <!-- Start Court page-->
 <div data-role="page" id="court">
 
@@ -1773,15 +1348,146 @@
 	<div data-role="header">
     <a href="#mypanel" data-transition="slide" class="ui-btn">Menu</a>
     <a href="#contact" data-transition="slide" class="ui-btn">></a>
-		<h1>Court</h1>
+		<h1>Court hire</h1>
 
 	</div><!-- /header -->
 
 	<div role="main" class="ui-content">
 
-		<p>Hire the court here</p>
+        <div id="divgame">
+        	<form id="gamesform">
+             <fieldset id="framegames">
+              <legend id="glegend"></legend>
+        	   <div id="game1">
 
-	<div id="holder"> <ul  id="place"> </ul> </div>
+        		<label>First Name </label><input type="text" id="teamA" class="styleteam" placeholder="First Name" />
+        		<label>Last Name </label><input type="text" id="teamB" class="styleteam" placeholder="Last Name" />
+            <label>Phone Number</label><input type="text" id="grade" class="stylegrade" placeholder="Phone number" />
+            <label>E-mail</label><input type="email" id="ump1" class="styleumpire" placeholder="E-mail" />
+            <label>Start time </label> <input type="date" id="date" class="date" placeholder="Starting Time" />
+            <label>End time </label> <input type="date" id="date" class="date" placeholder="Ending Time" />
+        		<select id="Location" class="Location"><option selected>location</option>
+              <option >Court 1</option>
+              <option >Court 2</option>
+              <option >Court 3</option>
+              <option >Court 4</option>
+              <option >Court 5</option>
+              <option >Court 6</option>
+            </select>
+        		<div id="dateError" class="errorField"></div>
+        		<div id="teamAError" class="errorField"></div>
+        		<div id="teamBError" class="errorField"></div>
+        	  </div>
+
+            <div id="game2">
+              <label>First Name </label><input type="text" id="teamA" class="styleteam" placeholder="First Name" />
+              <label>Last Name </label><input type="text" id="teamB" class="styleteam" placeholder="Last Name" />
+              <label>Phone Number</label><input type="text" id="grade" class="stylegrade" placeholder="Phone number" />
+              <label>E-mail</label><input type="email" id="ump1" class="styleumpire" placeholder="E-mail" />
+              <label>Start time </label> <input type="date" id="date" class="date" placeholder="Starting Time" />
+              <label>End time </label> <input type="date" id="date" class="date" placeholder="Ending Time" />
+              <select id="Location" class="Location"><option selected>location</option>
+                <option >Court 1</option>
+                <option >Court 2</option>
+                <option >Court 3</option>
+                <option >Court 4</option>
+                <option >Court 5</option>
+                <option >Court 6</option>
+              </select>
+              <div id="dateError" class="errorField"></div>
+              <div id="teamAError" class="errorField"></div>
+              <div id="teamBError" class="errorField"></div>
+           </div>
+
+           <div id="game3">
+             <label>First Name </label><input type="text" id="teamA" class="styleteam" placeholder="First Name" />
+             <label>Last Name </label><input type="text" id="teamB" class="styleteam" placeholder="Last Name" />
+             <label>Phone Number</label><input type="text" id="grade" class="stylegrade" placeholder="Phone number" />
+             <label>E-mail</label><input type="email" id="ump1" class="styleumpire" placeholder="E-mail" />
+             <label>Start time </label> <input type="date" id="date" class="date" placeholder="Starting Time" />
+             <label>End time </label> <input type="date" id="date" class="date" placeholder="Ending Time" />
+             <select id="Location" class="Location"><option selected>location</option>
+               <option >Court 1</option>
+               <option >Court 2</option>
+               <option >Court 3</option>
+               <option >Court 4</option>
+               <option >Court 5</option>
+               <option >Court 6</option>
+             </select>
+             <div id="dateError" class="errorField"></div>
+             <div id="teamAError" class="errorField"></div>
+             <div id="teamBError" class="errorField"></div>
+          </div>
+
+          <div id="game4">
+            <label>First Name </label><input type="text" id="teamA" class="styleteam" placeholder="First Name" />
+            <label>Last Name </label><input type="text" id="teamB" class="styleteam" placeholder="Last Name" />
+            <label>Phone Number</label><input type="text" id="grade" class="stylegrade" placeholder="Phone number" />
+            <label>E-mail</label><input type="email" id="ump1" class="styleumpire" placeholder="E-mail" />
+            <label>Start time </label> <input type="date" id="date" class="date" placeholder="Starting Time" />
+            <label>End time </label> <input type="date" id="date" class="date" placeholder="Ending Time" />
+            <select id="Location" class="Location"><option selected>location</option>
+              <option >Court 1</option>
+              <option >Court 2</option>
+              <option >Court 3</option>
+              <option >Court 4</option>
+              <option >Court 5</option>
+              <option >Court 6</option>
+            </select>
+            <div id="dateError" class="errorField"></div>
+            <div id="teamAError" class="errorField"></div>
+            <div id="teamBError" class="errorField"></div>
+         </div>
+
+         <div id="game5">
+           <label>First Name </label><input type="text" id="teamA" class="styleteam" placeholder="First Name" />
+           <label>Last Name </label><input type="text" id="teamB" class="styleteam" placeholder="Last Name" />
+           <label>Phone Number</label><input type="text" id="grade" class="stylegrade" placeholder="Phone number" />
+           <label>E-mail</label><input type="email" id="ump1" class="styleumpire" placeholder="E-mail" />
+           <label>Start time </label> <input type="date" id="date" class="date" placeholder="Starting Time" />
+           <label>End time </label> <input type="date" id="date" class="date" placeholder="Ending Time" />
+           <select id="Location" class="Location"><option selected>location</option>
+             <option >Court 1</option>
+             <option >Court 2</option>
+             <option >Court 3</option>
+             <option >Court 4</option>
+             <option >Court 5</option>
+             <option >Court 6</option>
+           </select>
+           <div id="dateError" class="errorField"></div>
+           <div id="teamAError" class="errorField"></div>
+           <div id="teamBError" class="errorField"></div>
+        </div>
+
+        <div id="game6">
+          <label>First Name </label><input type="text" id="teamA" class="styleteam" placeholder="First Name" />
+          <label>Last Name </label><input type="text" id="teamB" class="styleteam" placeholder="Last Name" />
+          <label>Phone Number</label><input type="text" id="grade" class="stylegrade" placeholder="Phone number" />
+          <label>E-mail</label><input type="email" id="ump1" class="styleumpire" placeholder="E-mail" />
+          <label>Start time </label> <input type="date" id="date" class="date" placeholder="Starting Time" />
+          <label>End time </label> <input type="date" id="date" class="date" placeholder="Ending Time" />
+          <select id="Location" class="Location"><option selected>location</option>
+            <option >Court 1</option>
+            <option >Court 2</option>
+            <option >Court 3</option>
+            <option >Court 4</option>
+            <option >Court 5</option>
+            <option >Court 6</option>
+          </select>
+          <div id="dateError" class="errorField"></div>
+          <div id="teamAError" class="errorField"></div>
+          <div id="teamBError" class="errorField"></div>
+       </div>
+
+
+        		<input type="button" id="addfields" value="Add another booking" />
+        		<input type="button" id="addgames" value="Complete Booking" />
+            <a href="#court" data-transition="slide" data-direction="reverse" class="ui-btn" >Cancel Booking</a>
+
+        	   </fieldset>
+        	  </form>
+        	</div>
+
 
 	</div><!-- /content -->
 
