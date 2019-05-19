@@ -13,7 +13,7 @@
 
     <link rel="stylesheet" href="css/menu.css">
 
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
 
 
@@ -22,6 +22,7 @@
       <script src="js/jquery.js"></script>
 
       <script src="js/jquery.mobile-1.4.5.js"></script>
+
 
       <!-- Bootstrap core CSS -->
       <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
@@ -247,6 +248,27 @@
   </script>
 
 
+  <script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("mySidenav2").style.width = "250px";
+  document.getElementById("mySidenav3").style.width = "250px";
+  document.getElementById("mySidenav4").style.width = "250px";
+  document.getElementById("mySidenav5").style.width = "250px";
+  document.getElementById("mySidenav6").style.width = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("mySidenav2").style.width = "0";
+  document.getElementById("mySidenav3").style.width = "0";
+  document.getElementById("mySidenav4").style.width = "0";
+  document.getElementById("mySidenav5").style.width = "0";
+  document.getElementById("mySidenav6").style.width = "0";
+}
+</script>
+
+
 </head>
 
 
@@ -256,34 +278,44 @@
 
 <!-- Start home page -->
 
+
+
+
+<!-- Pushy Menu -->
+
 <div data-role="page" id="home">
 
-  <div data-role="panel" data-position="left" id="mypanel" >
-    <a href="#player" data-transition="slide" class="ui-btn" >Players</a>
-    <a href="#coach" data-transition="slide" class="ui-btn">Coach</a>
-    <a href="#court" data-transition="slide" class="ui-btn">Court</a>
-    <a href="#contact" data-transition="slide" class="ui-btn">Contact Us</a>
-    <a href="#login" data-transition="slide" class="ui-btn">Login</a>
-  </div><!-- /panel -->
+  <div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="#player" data-transition="slide" class="ui-btn" ><h2>Players</h2></a>
+  <a href="#coach" data-transition="slide" class="ui-btn"><h2>Coach</h2></a>
+  <a href="#court" data-transition="slide" class="ui-btn"><h2>Court</h2></a>
+  <a href="#contact" data-transition="slide" class="ui-btn"><h2>Contact Us</h2></a>
+  <a href="#login" data-transition="slide" class="ui-btn"><h2>Login</h2></a>
+</div>
+<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Menu</span>
 
-	<div data-role="header">
-        <a href="#mypanel" data-transition="slide" class="ui-btn">Menu</a>
-      	<a href="#player" data-transition="slide" class="ui-btn" >></a>
-		<h1>Home</h1>
+  <div data-role="header">
 
-	</div><!-- /header -->
+  <h1>Home</h1>
 
-	<div role="main" class="ui-content">
+  </div><!-- /header -->
+
+
+
+
+  <div role="main" class="ui-content">
 
     <p></p>
       <img src="img/profile.jpg" alt="home" class="imag">
-	</div><!-- /content -->
-
-	<div data-role="footer" data-position="fixed">
+  </div><!-- /content -->
 
 
-  <a href="#coach" class="ui-btn ui-icon-user  ui-btn-icon-top" id="home1">Coach</a>
-  <a href="#player" class="ui-btn ui-icon-comment ui-btn-icon-top" id="back1"data-transition="slide" data-direction="reverse">Players</a>
+<div data-role="footer" data-position="fixed">
+  <a href="#coach" class="ui-btn ui-icon-user  ui-btn-icon-top" id="home1"><h2>Coach</h2></a>
+  <a href="#player" class="ui-btn ui-icon-comment ui-btn-icon-top" id="back1"data-transition="slide" data-direction="reverse"><h2>Players</h2></a>
+
+
 
 
 	</div><!-- /footer -->
@@ -293,18 +325,18 @@
 <!-- Start of player page-->
 <div data-role="page" id="player">
 
-  <div data-role="panel" data-position="left" id="mypanel" >
-    <a href="#home" data-transition="slide" data-direction="reverse" class="ui-btn">Home</a>
-    <a href="#coach" data-transition="slide" class="ui-btn">Coach</a>
-    <a href="#court" data-transition="slide" class="ui-btn">Court</a>
-    <a href="#contact" data-transition="slide" class="ui-btn">Contact Us</a>
-    <a href="#login" data-transition="slide" class="ui-btn">Login</a>
-  </div>
+  <div id="mySidenav2" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="#home" data-transition="slide" data-direction="reverse" class="ui-btn"><h2>Home</h2></a>
+  <a href="#coach" data-transition="slide" class="ui-btn"><h2>Coach</h2></a>
+  <a href="#court" data-transition="slide" class="ui-btn"><h2>Court</h2></a>
+  <a href="#contact" data-transition="slide" class="ui-btn"><h2>Contact Us</h2></a>
+  <a href="#login" data-transition="slide" class="ui-btn"><h2>Login</h2></a>
+</div>
+<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Menu</span>
+
 
 	<div data-role="header">
-
-    <a href="#mypanel" data-transition="slide" class="ui-btn">Menu</a>
-    <a href="#coach" data-transition="slide" class="ui-btn">></a>
 
     <h1>Players</h1>
 
@@ -1004,32 +1036,44 @@
 
         </div>
 
-
-
-
 	</div><!-- /header -->
 
 	<div data-role="footer" data-position="fixed">
-    <a href="#home" class="ui-btn ui-icon-home  ui-btn-icon-top" id="home1">Home</a>
-    <a href="#home" class="ui-btn ui-icon-back ui-btn-icon-top" id="back1" data-transition="slide" data-direction="reverse">Back</a>
+    <a href="#home" class="ui-btn ui-icon-home  ui-btn-icon-top" id="home1"><h2>Home</h2></a>
+    <a href="#home" class="ui-btn ui-icon-back ui-btn-icon-top" id="back1" data-transition="slide" data-direction="reverse"><h2>Back</h2></a>
 	</div><!-- /footer -->
 
 </div><!-- /page -->
 
+
+
+
+
+
+
+
+
+
+
+
+
 <!-- Start of Coaching page-->
 <div data-role="page" id="coach">
 
-  <div data-role="panel" data-position="left" id="mypanel" >
-    <a href="#home" data-transition="slide" data-direction="reverse" class="ui-btn">Home</a>
-    <a href="#player" data-transition="slide" data-direction="reverse" class="ui-btn">Player</a>
-    <a href="#court" data-transition="slide" class="ui-btn">Court</a>
-    <a href="#contact" data-transition="slide" class="ui-btn">Contact Us</a>
-    <a href="#login" data-transition="slide" class="ui-btn">Login</a>
-  </div>
+  <div id="mySidenav3" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="#home" data-transition="slide" data-direction="reverse" class="ui-btn"><h2>Home</h2></a>
+  <a href="#player" data-transition="slide" data-direction="reverse" class="ui-btn"><h2>Players</h2></a>
+  <a href="#court" data-transition="slide" class="ui-btn"><h2>Court</h2></a>
+  <a href="#contact" data-transition="slide" class="ui-btn"><h2>Contact Us</h2></a>
+  <a href="#login" data-transition="slide" class="ui-btn"><h2>Login</h2></a>
 
-	<div data-role="header"> <!-- Start header-->
-      <a href="#mypanel" data-transition="slide" class="ui-btn">Menu</a>
-    <a href="#about" data-transition="slide" class="ui-btn">></a>
+</div>
+
+<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Menu</span>
+
+
+  <div data-role="header"> <!-- Start header-->
 
 		<h1>Coach</h1>
 
@@ -1041,295 +1085,43 @@
 
 	<h2>List of coaches </h2>
 
-
-      <div class="card">
-
-          <h1>Sabin </h1>
-        <img src="img/coach1.jpg" alt="image_from_" />
-      <h1>
-        <label for="male">Availability</label>
-        <label for="flip-4" class="ui-hidden-accessible">Flip toggle:</label>
-          <select name="flip-4" id="flip-4" data-role="slider" data-mini="true">
-    						<option value="off">Off</option>
-    						<option value="on">On</option>
-          </select>
-        <label for="slider-2">Experience</label>
-        <input type="range" name="slider-2" id="slider-2" value="50" min="0" max="100" data-highlight="true">
-
-          <label for="male">Sex</label>
-
-        <label for="select-native-4" class="ui-hidden-accessible">Native select:</label>
-        <select name="select-native-4" id="select-native-4">
-    					<option value="small">Female</option>
-    					<option value="medium">Male</option>
-        </select>
-
-        <label for="male">Age</label>
-
-        <label for="select-native-4" class="ui-hidden-accessible">Native select:</label>
-        <select name="select-native-4" id="select-native-4">
-    					<option value="small">10</option>
-    					<option value="medium">11</option>
-            <option value="small">12</option>
-    					<option value="medium">13</option>
-            <option value="small">14</option>
-    					<option value="medium">15</option>
-            <option value="small">16</option>
-    					<option value="medium">17</option>
-            <option value="small">18</option>
-    					<option value="medium">19</option>
-            <option value="small">20</option>
-    					<option value="medium">21</option>
-            <option value="small">22</option>
-    					<option value="medium">23</option>
-            <option value="small">24</option>
-    					<option value="medium">25</option>
-            <option value="small">26</option>
-    					<option value="medium">27</option>
-            <option value="small">28</option>
-    					<option value="medium">29</option>
-            <option value="small">30</option>
-    					<option value="medium">31-40</option>
-            <option value="small">41-50</option>
-    					<option value="medium">51-60</option>
-            <option value="medium">61-70</option>
-            <option value="small">71-80</option>
-    					<option value="medium">81-x</option>
-
-        </select>
-
-      </h1>
-
-        <h2> About me</h2>
-        <p> sncsncd,s;;sd;ds  </P>
-
-        <div class="cardAction">
-
-        </div>
-
-      </div>
+  <div class="cardcoach">
+    <img src="img/player1.jpg" alt="image_from_" />
+  <h1>
+    <h1>John Doe</h1>
+    <p class="title">CEO & Founder, Example</p>
+    <p>Harvard University</p>
+    <div style="margin: 24px 0;">
+      <a href="#"><i class="fa fa-dribbble"></i></a>
+      <a href="#"><i class="fa fa-twitter"></i></a>
+      <a href="#"><i class="fa fa-linkedin"></i></a>
+      <a href="#"><i class="fa fa-facebook"></i></a>
+    </div>
+    <p><button>Contact</button></p>
+  </div>
 
 
-      <div class="card">
-
-          <h1>Sabin </h1>
-        <img src="img/player3.jpg" alt="image_from_" />
-      <h1>
-        <label for="male">Availability</label>
-        <label for="flip-4" class="ui-hidden-accessible">Flip toggle:</label>
-          <select name="flip-4" id="flip-4" data-role="slider" data-mini="true">
-      						<option value="off">Off</option>
-      						<option value="on">On</option>
-          </select>
-        <label for="slider-2">Experience</label>
-        <input type="range" name="slider-2" id="slider-2" value="50" min="0" max="100" data-highlight="true">
-
-          <label for="male">Sex</label>
-
-        <label for="select-native-4" class="ui-hidden-accessible">Native select:</label>
-        <select name="select-native-4" id="select-native-4">
-      					<option value="small">Male</option>
-      					<option value="medium">Female</option>
-        </select>
-
-        <label for="male">Age</label>
-
-        <label for="select-native-4" class="ui-hidden-accessible">Native select:</label>
-        <select name="select-native-4" id="select-native-4">
-      					<option value="small">10</option>
-      					<option value="medium">11</option>
-            <option value="small">12</option>
-      					<option value="medium">13</option>
-            <option value="small">14</option>
-      					<option value="medium">15</option>
-            <option value="small">16</option>
-      					<option value="medium">17</option>
-            <option value="small">18</option>
-      					<option value="medium">19</option>
-            <option value="small">20</option>
-      					<option value="medium">21</option>
-            <option value="small">22</option>
-      					<option value="medium">23</option>
-            <option value="small">24</option>
-      					<option value="medium">25</option>
-            <option value="small">26</option>
-      					<option value="medium">27</option>
-            <option value="small">28</option>
-      					<option value="medium">29</option>
-            <option value="small">30</option>
-      					<option value="medium">31-40</option>
-            <option value="small">41-50</option>
-      					<option value="medium">51-60</option>
-            <option value="medium">61-70</option>
-            <option value="small">71-80</option>
-      					<option value="medium">81-x</option>
-
-        </select>
-
-      </h1>
-
-        <h2> About me</h2>
-        <p> sncsncd,s;;sd;ds  </P>
-        <p> sncsncd,s;;sd;ds  </P>
-        <p> sncsncd,s;;sd;ds  </P>
-        <p> sncsncd,s;;sd;ds  </P>
-        <p> sncsncd,s;;sd;ds  </P>
-
-        <div class="cardAction">
-
-        </div>
-
-      </div>
-
-
-
-
-      <div class="card">
-
-          <h1>Sabin </h1>
-        <img src="img/player10.jpg" alt="image_from_" />
-      <h1>
-        <label for="male">Availability</label>
-        <label for="flip-4" class="ui-hidden-accessible">Flip toggle:</label>
-          <select name="flip-4" id="flip-4" data-role="slider" data-mini="true">
-    						<option value="off">Off</option>
-    						<option value="on">On</option>
-          </select>
-        <label for="slider-2">Experience</label>
-        <input type="range" name="slider-2" id="slider-2" value="50" min="0" max="100" data-highlight="true">
-
-          <label for="male">Sex</label>
-
-        <label for="select-native-4" class="ui-hidden-accessible">Native select:</label>
-        <select name="select-native-4" id="select-native-4">
-    					<option value="small">Male</option>
-    					<option value="medium">Female</option>
-        </select>
-
-        <label for="male">Age</label>
-
-        <label for="select-native-4" class="ui-hidden-accessible">Native select:</label>
-        <select name="select-native-4" id="select-native-4">
-    					<option value="small">10</option>
-    					<option value="medium">11</option>
-            <option value="small">12</option>
-    					<option value="medium">13</option>
-            <option value="small">14</option>
-    					<option value="medium">15</option>
-            <option value="small">16</option>
-    					<option value="medium">17</option>
-            <option value="small">18</option>
-    					<option value="medium">19</option>
-            <option value="small">20</option>
-    					<option value="medium">21</option>
-            <option value="small">22</option>
-    					<option value="medium">23</option>
-            <option value="small">24</option>
-    					<option value="medium">25</option>
-            <option value="small">26</option>
-    					<option value="medium">27</option>
-            <option value="small">28</option>
-    					<option value="medium">29</option>
-            <option value="small">30</option>
-    					<option value="medium">31-40</option>
-            <option value="small">41-50</option>
-    					<option value="medium">51-60</option>
-            <option value="medium">61-70</option>
-            <option value="small">71-80</option>
-    					<option value="medium">81-x</option>
-
-        </select>
-
-      </h1>
-
-        <h2> About me</h2>
-        <p> sncsncd,s;;sd;ds  </P>
-        <p> sncsncd,s;;sd;ds  </P>
-        <p> sncsncd,s;;sd;ds  </P>
-        <p> sncsncd,s;;sd;ds  </P>
-        <p> sncsncd,s;;sd;ds  </P>
-
-        <div class="cardAction">
-
-        </div>
-
-      </div>
-
-
-      <div class="card">
-
-          <h1>Sabin </h1>
-        <img src="img/coach2.jpg" alt="image_from_" />
-      <h1>
-        <label for="male">Availability</label>
-        <label for="flip-4" class="ui-hidden-accessible">Flip toggle:</label>
-          <select name="flip-4" id="flip-4" data-role="slider" data-mini="true">
-    						<option value="off">Off</option>
-    						<option value="on">On</option>
-          </select>
-        <label for="slider-2">Experience</label>
-        <input type="range" name="slider-2" id="slider-2" value="50" min="0" max="100" data-highlight="true">
-
-          <label for="male">Sex</label>
-
-        <label for="select-native-4" class="ui-hidden-accessible">Native select:</label>
-        <select name="select-native-4" id="select-native-4">
-    					<option value="small">Male</option>
-    					<option value="medium">Female</option>
-        </select>
-
-        <label for="male">Age</label>
-
-        <label for="select-native-4" class="ui-hidden-accessible">Native select:</label>
-        <select name="select-native-4" id="select-native-4">
-    					<option value="small">10</option>
-    					<option value="medium">11</option>
-            <option value="small">12</option>
-    					<option value="medium">13</option>
-            <option value="small">14</option>
-    					<option value="medium">15</option>
-            <option value="small">16</option>
-    					<option value="medium">17</option>
-            <option value="small">18</option>
-    					<option value="medium">19</option>
-            <option value="small">20</option>
-    					<option value="medium">21</option>
-            <option value="small">22</option>
-    					<option value="medium">23</option>
-            <option value="small">24</option>
-    					<option value="medium">25</option>
-            <option value="small">26</option>
-    					<option value="medium">27</option>
-            <option value="small">28</option>
-    					<option value="medium">29</option>
-            <option value="small">30</option>
-    					<option value="medium">31-40</option>
-            <option value="small">41-50</option>
-    					<option value="medium">51-60</option>
-            <option value="medium">61-70</option>
-            <option value="small">71-80</option>
-    					<option value="medium">81-x</option>
-
-        </select>
-
-      </h1>
-
-        <h2> About me</h2>
-        <p> sncsncd,s;;sd;ds  </P>
-
-
-        <div class="cardAction">
-
-        </div>
-
-      </div>
+  <div class="cardcoach">
+    <img src="img/player1.jpg" alt="image_from_" />
+  <h1>
+    <h1>John Doe</h1>
+    <p class="title">CEO & Founder, Example</p>
+    <p>Harvard University</p>
+    <div style="margin: 24px 0;">
+      <a href="#"><i class="fa fa-dribbble"></i></a>
+      <a href="#"><i class="fa fa-twitter"></i></a>
+      <a href="#"><i class="fa fa-linkedin"></i></a>
+      <a href="#"><i class="fa fa-facebook"></i></a>
+    </div>
+    <p><button>Contact</button></p>
+  </div>
 
 
 	</div><!-- /content -->
 
 	<div data-role="footer" data-position="fixed">
-    <a href="#home" class="ui-btn ui-icon-home  ui-btn-icon-top" id="home1">Home</a>
-    <a href="#player" class="ui-btn ui-icon-back ui-btn-icon-top" id="back1" data-transition="slide" data-direction="reverse">Back</a>
+    <a href="#home" class="ui-btn ui-icon-home  ui-btn-icon-top" id="home1"><h2>Home</h2></a>
+    <a href="#player" class="ui-btn ui-icon-back ui-btn-icon-top" id="back1" data-transition="slide" data-direction="reverse"><h2>Back</h2></a>
 	</div><!-- /footer -->
 </div><!-- /page -->
 
@@ -1337,18 +1129,24 @@
 <!-- Start Court page-->
 <div data-role="page" id="court">
 
-  <div data-role="panel" data-position="left" id="mypanel" >
-    <a href="#home" data-transition="slide" data-direction="reverse" class="ui-btn">Home</a>
-    <a href="#player" data-transition="slide" data-direction="reverse" class="ui-btn">Player</a>
-    <a href="#coach" data-transition="slide" data-direction="reverse" class="ui-btn">Coach</a>
-    <a href="#contact" data-transition="slide" class="ui-btn">Contact Us</a>
-    <a href="#login" data-transition="slide" class="ui-btn">Login</a>
+  <div id="mySidenav4" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="#home" data-transition="slide" data-direction="reverse" class="ui-btn"><h2>Home</h2></a>
+    <a href="#player" data-transition="slide" data-direction="reverse" class="ui-btn"><h2>Players</h2></a>
+    <a href="#coach" data-transition="slide" data-direction="reverse" class="ui-btn"><h2>Coach</h2></a>
+    <a href="#contact" data-transition="slide" class="ui-btn"><h2>Contact Us</h2></a>
+    <a href="#login" data-transition="slide" class="ui-btn"><h2>Login</h2></a>
   </div>
+  <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Menu</span>
 
 	<div data-role="header">
-    <a href="#mypanel" data-transition="slide" class="ui-btn">Menu</a>
-    <a href="#contact" data-transition="slide" class="ui-btn">></a>
+
 		<h1>Court hire</h1>
+
+    <img src="img/selected1.jpg" alt="Coutrt 1" />
+    <img src="img/unavailable1.jpg" alt="Coutrt 2" />
+    <img src="img/booked1.jpg" alt="Coutrt 3" />
+    <img src="img/available1.jpg" alt="Coutrt 4" />
 
 	</div><!-- /header -->
 
@@ -1360,13 +1158,16 @@
               <legend id="glegend"></legend>
         	   <div id="game1">
 
-        		<label>First Name </label><input type="text" id="teamA" class="styleteam" placeholder="First Name" />
-        		<label>Last Name </label><input type="text" id="teamB" class="styleteam" placeholder="Last Name" />
-            <label>Phone Number</label><input type="text" id="grade" class="stylegrade" placeholder="Phone number" />
-            <label>E-mail</label><input type="email" id="ump1" class="styleumpire" placeholder="E-mail" />
-            <label>Start time </label> <input type="date" id="date" class="date" placeholder="Starting Time" />
-            <label>End time </label> <input type="date" id="date" class="date" placeholder="Ending Time" />
+        		<label><h3>First Name</h3> </label><input type="text" id="teamA" class="styleteam" placeholder="First Name" />
+        		<label><h3>Last Name</h3></label><input type="text" id="teamB" class="styleteam" placeholder="Last Name" />
+            <label><h3>Phone number</h3></label><input type="text" id="grade" class="stylegrade" placeholder="Phone number" />
+            <label><h3>E-Mail</h3></label><input type="email" id="ump1" class="styleumpire" placeholder="E-mail" />
+            <label><h3>Start date</h3> </label> <input type="date" id="date" class="date" placeholder="Starting Time" />
+            <label><h3>Start time</h3> </label> <input type="time" id="date" class="date" placeholder="Starting Time" />
+            <label><h3>End date</h3> </label> <input type="date" id="date" class="date" placeholder="Starting Time" />
+            <label><h3>End time</h3> </label> <input type="time" id="date" class="date" placeholder="Starting Time" />
         		<select id="Location" class="Location"><option selected>location</option>
+              <img src="img/player3.jpg" alt="image_from_" />
               <option >Court 1</option>
               <option >Court 2</option>
               <option >Court 3</option>
@@ -1384,8 +1185,8 @@
               <label>Last Name </label><input type="text" id="teamB" class="styleteam" placeholder="Last Name" />
               <label>Phone Number</label><input type="text" id="grade" class="stylegrade" placeholder="Phone number" />
               <label>E-mail</label><input type="email" id="ump1" class="styleumpire" placeholder="E-mail" />
-              <label>Start time </label> <input type="date" id="date" class="date" placeholder="Starting Time" />
-              <label>End time </label> <input type="date" id="date" class="date" placeholder="Ending Time" />
+              <label>Start time </label> <input type="time" id="date" class="date" placeholder="Starting Time" />
+              <label>End time </label> <input type="time" id="date" class="date" placeholder="Ending Time" />
               <select id="Location" class="Location"><option selected>location</option>
                 <option >Court 1</option>
                 <option >Court 2</option>
@@ -1399,87 +1200,6 @@
               <div id="teamBError" class="errorField"></div>
            </div>
 
-           <div id="game3">
-             <label>First Name </label><input type="text" id="teamA" class="styleteam" placeholder="First Name" />
-             <label>Last Name </label><input type="text" id="teamB" class="styleteam" placeholder="Last Name" />
-             <label>Phone Number</label><input type="text" id="grade" class="stylegrade" placeholder="Phone number" />
-             <label>E-mail</label><input type="email" id="ump1" class="styleumpire" placeholder="E-mail" />
-             <label>Start time </label> <input type="date" id="date" class="date" placeholder="Starting Time" />
-             <label>End time </label> <input type="date" id="date" class="date" placeholder="Ending Time" />
-             <select id="Location" class="Location"><option selected>location</option>
-               <option >Court 1</option>
-               <option >Court 2</option>
-               <option >Court 3</option>
-               <option >Court 4</option>
-               <option >Court 5</option>
-               <option >Court 6</option>
-             </select>
-             <div id="dateError" class="errorField"></div>
-             <div id="teamAError" class="errorField"></div>
-             <div id="teamBError" class="errorField"></div>
-          </div>
-
-          <div id="game4">
-            <label>First Name </label><input type="text" id="teamA" class="styleteam" placeholder="First Name" />
-            <label>Last Name </label><input type="text" id="teamB" class="styleteam" placeholder="Last Name" />
-            <label>Phone Number</label><input type="text" id="grade" class="stylegrade" placeholder="Phone number" />
-            <label>E-mail</label><input type="email" id="ump1" class="styleumpire" placeholder="E-mail" />
-            <label>Start time </label> <input type="date" id="date" class="date" placeholder="Starting Time" />
-            <label>End time </label> <input type="date" id="date" class="date" placeholder="Ending Time" />
-            <select id="Location" class="Location"><option selected>location</option>
-              <option >Court 1</option>
-              <option >Court 2</option>
-              <option >Court 3</option>
-              <option >Court 4</option>
-              <option >Court 5</option>
-              <option >Court 6</option>
-            </select>
-            <div id="dateError" class="errorField"></div>
-            <div id="teamAError" class="errorField"></div>
-            <div id="teamBError" class="errorField"></div>
-         </div>
-
-         <div id="game5">
-           <label>First Name </label><input type="text" id="teamA" class="styleteam" placeholder="First Name" />
-           <label>Last Name </label><input type="text" id="teamB" class="styleteam" placeholder="Last Name" />
-           <label>Phone Number</label><input type="text" id="grade" class="stylegrade" placeholder="Phone number" />
-           <label>E-mail</label><input type="email" id="ump1" class="styleumpire" placeholder="E-mail" />
-           <label>Start time </label> <input type="date" id="date" class="date" placeholder="Starting Time" />
-           <label>End time </label> <input type="date" id="date" class="date" placeholder="Ending Time" />
-           <select id="Location" class="Location"><option selected>location</option>
-             <option >Court 1</option>
-             <option >Court 2</option>
-             <option >Court 3</option>
-             <option >Court 4</option>
-             <option >Court 5</option>
-             <option >Court 6</option>
-           </select>
-           <div id="dateError" class="errorField"></div>
-           <div id="teamAError" class="errorField"></div>
-           <div id="teamBError" class="errorField"></div>
-        </div>
-
-        <div id="game6">
-          <label>First Name </label><input type="text" id="teamA" class="styleteam" placeholder="First Name" />
-          <label>Last Name </label><input type="text" id="teamB" class="styleteam" placeholder="Last Name" />
-          <label>Phone Number</label><input type="text" id="grade" class="stylegrade" placeholder="Phone number" />
-          <label>E-mail</label><input type="email" id="ump1" class="styleumpire" placeholder="E-mail" />
-          <label>Start time </label> <input type="date" id="date" class="date" placeholder="Starting Time" />
-          <label>End time </label> <input type="date" id="date" class="date" placeholder="Ending Time" />
-          <select id="Location" class="Location"><option selected>location</option>
-            <option >Court 1</option>
-            <option >Court 2</option>
-            <option >Court 3</option>
-            <option >Court 4</option>
-            <option >Court 5</option>
-            <option >Court 6</option>
-          </select>
-          <div id="dateError" class="errorField"></div>
-          <div id="teamAError" class="errorField"></div>
-          <div id="teamBError" class="errorField"></div>
-       </div>
-
-
         		<input type="button" id="addfields" value="Add another booking" />
         		<input type="button" id="addgames" value="Complete Booking" />
             <a href="#court" data-transition="slide" data-direction="reverse" class="ui-btn" >Cancel Booking</a>
@@ -1492,8 +1212,8 @@
 	</div><!-- /content -->
 
 	<div data-role="footer" data-position="fixed">
-    <a href="#home" class="ui-btn ui-icon-home  ui-btn-icon-top" id="home1">Home</a>
-    <a href="#coach" class="ui-btn ui-icon-back ui-btn-icon-top" id="back1" data-transition="slide" data-direction="reverse">Back</a>
+    <a href="#home" class="ui-btn ui-icon-home  ui-btn-icon-top" id="home1"><h2>Home</h2></a>
+    <a href="#coach" class="ui-btn ui-icon-back ui-btn-icon-top" id="back1" data-transition="slide" data-direction="reverse"><h2>Back</h2></a>
 	</div><!-- /footer -->
 </div><!-- /page -->
 
@@ -1501,17 +1221,18 @@
 <!-- Start Contact us Page-->
 <div data-role="page" id="contact">
 
-  <div data-role="panel" data-position="left" id="mypanel" >
-    <a href="#home" data-transition="slide" data-direction="reverse" class="ui-btn">Home</a>
-    <a href="#player" data-transition="slide" data-direction="reverse" class="ui-btn">Player</a>
-    <a href="#coach" data-transition="slide" data-direction="reverse" class="ui-btn">Coach</a>
-    <a href="#court" data-transition="slide" data-direction="reverse" class="ui-btn">Court</a>
-    <a href="#login" data-transition="slide" class="ui-btn">Login</a>
+  <div id="mySidenav5" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="#home" data-transition="slide" data-direction="reverse" class="ui-btn"><h2>Home</h2></a>
+    <a href="#player" data-transition="slide" data-direction="reverse" class="ui-btn"><h2>Players</h2></a>
+    <a href="#coach" data-transition="slide" data-direction="reverse" class="ui-btn"><h2>Coach</h2></a>
+    <a href="#court" data-transition="slide" data-direction="reverse" class="ui-btn"><h2>Court</h2></a>
+    <a href="#login" data-transition="slide" class="ui-btn"><h2>Login</h2></a>
   </div>
+  <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Menu</span>
 
 	<div data-role="header">
-    <a href="#mypanel" data-transition="slide" class="ui-btn">Menu</a>
-    <a href="#login" data-transition="slide" >></a>
+
 		<h1>Contact Us</h1>
 
 	</div><!-- /header -->
@@ -1599,19 +1320,17 @@
 <!-- Start Login page-->
 <div data-role="page" id="login">
 
-  <div data-role="panel" data-position="left" id="mypanel" >
-    <a href="#home" data-transition="slide" data-direction="reverse" class="ui-btn">Home</a>
-    <a href="#player" data-transition="slide" data-direction="reverse" class="ui-btn">Player</a>
-    <a href="#coach" data-transition="slide" data-direction="reverse" class="ui-btn">Coach</a>
-    <a href="#court" data-transition="slide" data-direction="reverse" class="ui-btn">court</a>
-    <a href="#contact" data-transition="slide" data-direction="reverse" class="ui-btn">Contact Us</a>
+  <div id="mySidenav6" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="#home" data-transition="slide" data-direction="reverse" class="ui-btn"><h2>Home</h2></a>
+    <a href="#player" data-transition="slide" data-direction="reverse" class="ui-btn"><h2>Players</h2></a>
+    <a href="#coach" data-transition="slide" data-direction="reverse" class="ui-btn"><h2>Coach</h2></a>
+    <a href="#court" data-transition="slide" data-direction="reverse" class="ui-btn"><h2>Court</h2></a>
+    <a href="#contact" data-transition="slide" data-direction="reverse" class="ui-btn"><h2>Contact Us</h2></a>
   </div>
+  <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Menu</span>
 
   	<div data-role="header">
-
-      <a href="#mypanel" data-transition="slide" class="ui-btn">Menu</a>
-        <a href="#contact" data-transition="slide" data-direction="reverse" class="ui-btn"><</a>
-
 
 	</div><!-- /header -->
 
@@ -1629,7 +1348,7 @@
 
     <h2><button name="login-btn" id="login-btn" type="submit" value="submit">Create Account</button></h2>
 
-    <p>You are about to create you new account</p>
+    <p>You are about to create your new account</p>
       <input type="text" name="fName" id="user" value="" placeholder="First Name">
       <input type="text" name="lName" id="user" value="" placeholder="Last Name">
       <input type="email" name="user" id="user" value="" placeholder="E-mail">
@@ -1638,15 +1357,13 @@
       <button name="login-btn" id="login-btn" type="submit" value="submit">Submit</button>
     </div>
 
-
     <div data-role="footer" data-position="fixed">
       <a href="#home" class="ui-btn ui-icon-home  ui-btn-icon-top" id="home1">Home</a>
     <a href="#home" class="ui-btn ui-icon-back ui-btn-icon-top" id="back1" data-transition="slide" data-direction="reverse">Back</a>
-    </div><!-- /footer -->
+  	</div><!-- /footer -->
+
   </div>
   </div><!-- /page -->
-
-
 
 </body>
 </html>
